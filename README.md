@@ -1,3 +1,3 @@
-# demo-web-1
+# demo
 This is a testing demo website.
 Hello
