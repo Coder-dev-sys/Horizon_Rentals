@@ -1,58 +1,72 @@
-:root
-{
-    --main-color:#fe5b3d;
-    --second-color:#ffac38;
-    --text-color:#ffffff;
-    --gradient:linear-gradient(#ffffff,#ffd60a);
+:root {
+  --main-color: #fe5b3d;
+  --second-color: #ffac38;
+  --text-color: #ffffff;
+  --gradient: linear-gradient(#ffffff, #ffd60a);
 }
-@media (max-width:991px) {
-    header
-    {
-        padding: 10px 0px;
-    }
-    header .navbar
-    {
-        position: absolute;
-        top: -500px;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
-        transition: 0.3 ease;
-        text-align: left;
-    }
-    .logo img
-    {
-        margin-right: 0;
-        width: 200px;
-    }
-    .navbar a 
-    {
-        padding: 1rem;
-        border-left: 2px solid var(--main-color);
-        margin: 1rem;
-        display: block; 
-    }
-    .navbar a:hover
-    {
-        box-shadow: 0px 5px 5px rgba(255, 255, 255, 0.3);
-        border: none;
-    }
-    .navbar:active
-    {
-        top: 100%;
-    }
-    .navbar a::after
-    {
-        display: none;
-    }
-    #menu-icon
-    {
-        display: initial;
-    }
-    .sign-up
-    {
-        display: none;
-    }
+
+@media (max-width: 991px) {
+  header {
+    padding: 10px 12px;
+  }
+  section {
+    padding: 50px 40px;
+  }
+}
+
+@media (max-width: 881px) {
+  header {
+    padding: 10px 12px;
+  }
+
+  #menu-icon {
+    display: block;
+    position: absolute;
+    right: 12px;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: -500px;
+    left: 20px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+    transition: 0.3 ease;
+    text-align: left;
+    z-index: 1000;
+    align-items: self-start;
+  }
+
+  .navbar a {
+    padding: 1rem;
+    border-left: 2px solid var(--main-color);
+    margin: 1rem;
+    display: block;
+  }
+  header .navbar.active {
+    top: 100%;
+  }
+  
+  .logo img {
+    margin-right: 0;
+    width: 200px;
+  }
+
+  .navbar a:hover {
+    border: none;
+    color: #000000;
+    background: #ffd60a;
+    width: 100%;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+  
+  .header-btn button {
+    display: none;
+  }
+
 }

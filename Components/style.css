@@ -1,103 +1,226 @@
 /**    General    **/
-*
-{
-    margin: 0px;
-    padding: 0px;
-    scroll-behavior: smooth;
-    text-decoration: none;
-    background: black;
-    color: var(--text-color);
+* {
+  margin: 0px;
+  padding: 0px;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  background: black;
+  color: var(--text-color);
 }
-:root
-{
-    --main-color:#fe5b3d;
-    --second-color:#ffac38;
-    --text-color:#ffffff;
-    --gradient:linear-gradient(#ffffff,#ffd60a);
+
+:root {
+  --main-color: #fe5b3d;
+  --second-color: #ffac38;
+  --text-color: #ffffff;
+  --gradient: linear-gradient(#ffffff, #ffd60a);
 }
 
 
 
-/**    Header    **/
-header
-{
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0px;
-    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+/**    Navbar    **/
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+  /* background: #ffffff37; */
 }
-.logo img
-{
-    margin-right: 195px;
-    width: 200px;
+
+.logo img {
+  margin-left: 19px;
+  width: 200px;
 }
-.navbar
-{
-    display: flex;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.navbar li
-{
+
+.navbar li {
+  position: relative;
+  list-style: none;
+}
+
+.navbar a {
+  font-size: 1rem;
+  padding: 10px 31px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #ffd60a;
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  transition: 0.3s ease;
+  border-radius: 10px;
+}
+
+.navbar a:hover {
+  color: #ffd60a;
+}
+
+.navbar a:hover::after {
+  width: 75%;
+}
+
+#menu-icon {
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+}
+
+/* Sign In Button */
+.sign-in-btn {
     position: relative;
-    list-style: none;
-}
-.navbar a   
-{
-    font-size: 1rem;
     padding: 10px 20px;
-    font-weight: 500;
-    margin-left: 5px;
-}
-.navbar a::after
-{
-    content: '';
-    width: 0;
-    height: 3px;
+    border-radius: 7px;
+    border: 1px solid #ffd60a;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+  }
+  
+  .sign-in-btn:hover {
     background: #ffd60a;
+    box-shadow: 0 0 30px 5px rgb(168, 168, 168);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    color: black;
+  }
+  
+  .sign-in-btn:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+  }
+  
+  .sign-in-btn::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
     position: absolute;
-    bottom: -10px;
-    left: 15px;
-    transition: 0.5s;
-    border-radius: 10px;
-}
-.navbar a:hover::after
-{
-    width: 75%;
-}
-#menu-icon
-{
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 101;
-    display: none;
-}
-.header-btn a
-{
-    padding: 10px 20px;
-    color: var(--text-color);
-    font-weight: 500;
-}
-.header-btn .sign-in
-{
-    background: #474fa0;
-    color: #fff; 
-    border-radius: 0.5rem;
-    margin-right: 15px;
-}
-.header-btn .sign-in:hover
-{
-    background-color: var(--gradient);
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+  
+  @keyframes sh02 {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+  
+  .sign-in-btn:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+  }
+  
+
+/* Toggle Menu Button */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
 }
 
+.bar {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 40px;
+}
 
+.bar span {
+  position: absolute;
+  width: 45px;
+  height: 7px;
+  background: #f1faee;
+  border-radius: 100px;
+  display: inline-block;
+  transition: 0.3s ease;
+  left: 0;
+}
+
+.bar span.top {
+  top: 0;
+}
+
+.bar span.middle {
+  top: 17px;
+}
+
+.bar span.bottom {
+  bottom: 0;
+}
+
+input[type]:checked ~ span.top {
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 48px;
+  left: 5px;
+}
+
+input[type]:checked ~ span.bottom {
+  transform: rotate(-45deg);
+  transform-origin: top left;
+  width: 48px;
+  bottom: -1px;
+  box-shadow: 0 0 10px #495057;
+}
+
+input[type]:checked ~ span.middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}
 
 /* Body */
-section
-{
-    padding: 50px 100px;
+section {
+  padding: 50px 100px;
 }
