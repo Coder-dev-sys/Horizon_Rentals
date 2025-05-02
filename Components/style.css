@@ -1,0 +1,103 @@
+/**    General    **/
+*
+{
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    background: black;
+    color: var(--text-color);
+}
+:root
+{
+    --main-color:#fe5b3d;
+    --second-color:#ffac38;
+    --text-color:#ffffff;
+    --gradient:linear-gradient(#ffffff,#ffd60a);
+}
+
+
+
+/**    Header    **/
+header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+}
+.logo img
+{
+    margin-right: 195px;
+    width: 200px;
+}
+.navbar
+{
+    display: flex;
+}
+.navbar li
+{
+    position: relative;
+    list-style: none;
+}
+.navbar a   
+{
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.navbar a::after
+{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ffd60a;
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.navbar a:hover::after
+{
+    width: 75%;
+}
+#menu-icon
+{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 101;
+    display: none;
+}
+.header-btn a
+{
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.header-btn .sign-in
+{
+    background: #474fa0;
+    color: #fff; 
+    border-radius: 0.5rem;
+    margin-right: 15px;
+}
+.header-btn .sign-in:hover
+{
+    background-color: var(--gradient);
+}
+
+
+
+/* Body */
+section
+{
+    padding: 50px 100px;
+}
