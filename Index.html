@@ -4,18 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="Components/Logo/favicon.png" />
     <link rel="stylesheet" href="Components/style.css" />
     <link rel="stylesheet" href="Components/responsive.css" />
     <title>Moto Rent</title>
 </head>
 
 <body>
-    <!-- Navbar -->
+    <!-- Navbar Section -->
     <header>
-        <a href="#" class="logo"><img src="Components/Logo/final.png" alt="logo"></a>
+        <a href="#" class="logo"><img src="Components/Logo/final.png" alt="logo" /></a>
         <div id="menu-icon">
             <label class="bar" for="check">
-                <input type="checkbox" id="check">
+                <input type="checkbox" id="check" />
                 <span class="top"></span>
                 <span class="middle"></span>
                 <span class="bottom"></span>
@@ -24,7 +25,7 @@
         <ul class="navbar">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#blogs">Blogs</a></li>
+            <!-- <li><a href="#blogs">Blogs</a></li> -->
             <li><a href="#subscription">Subscription</a></li>
         </ul>
         <div class="header-btn">
@@ -32,21 +33,61 @@
         </div>
     </header>
 
-    <!-- Home -->
+    <!-- Home Section -->
     <section class="home" id="home">
         <div class="text">
-            <h1>Looking For <br>Rent A MotorCycle</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa earum quod ad consectetur quo, voluptatem
-                autem ea qui similique ipsa fuga numquam aliquid laborum porro? Optio hic aperiam maxime ratione.</p>
-
+            <h4>Two - Wheelers Rentals</h4>
+            <h1>Unleash Your Journey</h1>
+            <h3>Your Horizon Awaits , Rent Your Ride Today.</h3>
+        </div>
+        <div class="container">
+            <div class="bike-body">
+                <div class="seat"></div>
+                <div class="cover"></div>
+                <div class="lamp"></div>
+                <div class="motor">
+                    <div class="part-1">
+                        <div class="part-1-top"></div>
+                        <div class="part-1-bottom"></div>
+                    </div>
+                    <div class="part-2">
+                        <div class="part-2-base">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="front"></div>
+                <div class="back"></div>
+            </div>
+            <div class="tire"></div>
+            <div class="tire"></div>
+            <div class="smoke"></div>
+        </div>
+        <div class="form-container">
+            <form action="">
+                <div class="input-box">
+                    <span>Location</span>
+                    <input type="search" name="" id="" placeholder="Search Pleaces">
+                </div>
+                <div class="input-box">
+                    <span>Pick Up Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <div class="input-box">
+                    <span>Return Date</span>
+                    <input type="date" name="" id="">
+                </div>
+                <input type="submit" value="Search" class="btn-submit">
+            </form>
         </div>
     </section>
     <script src="Components/script.js"></script>
 </body>
 
 </html>
-
-
 
 
 

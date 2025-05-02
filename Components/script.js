@@ -1,4 +1,6 @@
-/**  Toggle menu on mobile devices  **/
+/**  Navbar Section  **/
+
+/* Toggle menu on mobile devices */
 const menuCheckbox = document.getElementById("check");
 const navbar = document.querySelector(".navbar");
 if (menuCheckbox) {
@@ -6,7 +8,6 @@ if (menuCheckbox) {
     navbar.classList.toggle("active");
   });
 }
-
 // Close menu when clicking outside
 window.addEventListener("click", (e) => {
   if (
@@ -19,7 +20,6 @@ window.addEventListener("click", (e) => {
     }
   }
 });
-
 // Close menu when scrolling
 window.addEventListener("scroll", () => {
   navbar.classList.remove("active");
@@ -27,3 +27,7 @@ window.addEventListener("scroll", () => {
     menuCheckbox.checked = false;
   }
 });
+
+
+
+/**  Home Section  **/
