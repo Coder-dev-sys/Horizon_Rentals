@@ -7,18 +7,22 @@
 
 /* Destop View */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+
   /* Header Section */
   header {
-    justify-content: space-evenly;  
+    justify-content: space-evenly;
+    left: 35px;
   }
 
 }
 
 /* Tablet View */
 @media (min-width: 768px) and (max-width: 991.98px) {
+
   /** Header Section **/
   header {
     padding: 10px 12px;
+    left: 45px;
   }
 
   #menu-icon {
@@ -43,30 +47,27 @@
 
   .navbar a {
     padding: 1rem;
-    border-left: 2px solid var(--main-color);
+    border-left: 2px solid #FFC300;
     margin: 1rem;
     display: block;
   }
+
   header .navbar.active {
-    top: 100%;
-  }
-  
-  .logo img {
-    margin-right: 0;
-    width: 200px;
+    top: 125%;
+    border-radius: 15px;
+    left: -3px;
+    background: black;
   }
 
-  .navbar a:hover {
-    border: none;
-    color: #000000;
-    background: #ffd60a;
-    width: 100%;
+  .header-logo img {
+    margin-right: 0;
+    width: 200px;
   }
 
   .navbar a::after {
     display: none;
   }
-  
+
   .header-btn button {
     display: none;
   }
@@ -80,9 +81,12 @@
 
 /* Landscape Mobile View */
 @media (min-width: 576px) and (max-width: 767.98px) {
+
   /** Header Section **/
   header {
     padding: 10px 12px;
+    margin-left: 8px;
+
   }
 
   #menu-icon {
@@ -107,30 +111,27 @@
 
   .navbar a {
     padding: 1rem;
-    border-left: 2px solid var(--main-color);
+    border-left: 2px solid #FFC300;
     margin: 1rem;
     display: block;
   }
+
   header .navbar.active {
-    top: 100%;
-  }
-  
-  .logo img {
-    margin-right: 0;
-    width: 200px;
+    top: 125%;
+    border-radius: 15px;
+    left: -3px;
+    background: black;
   }
 
-  .navbar a:hover {
-    border: none;
-    color: #000000;
-    background: #ffd60a;
-    width: 100%;
+  .header-logo img {
+    margin-right: 0;
+    width: 200px;
   }
 
   .navbar a::after {
     display: none;
   }
-  
+
   .header-btn button {
     display: none;
   }
@@ -138,11 +139,14 @@
 }
 
 /* Mobile View */
-@media (max-width: 575.98px)
-{
+@media (max-width: 575.98px) {
+
   /** Header Section **/
   header {
     padding: 10px 12px;
+    width: 101%;
+    margin-left: 17px;
+    top: 5px;
   }
 
   #menu-icon {
@@ -167,30 +171,27 @@
 
   .navbar a {
     padding: 1rem;
-    border-left: 2px solid var(--main-color);
+    border-left: 2px solid #FFC300;
     margin: 1rem;
     display: block;
   }
+
   header .navbar.active {
-    top: 100%;
-  }
-  
-  .logo img {
-    margin-right: 0;
-    width: 200px;
+    top: 125%;
+    border-radius: 15px;
+    left: -3px;
+    background: black;
   }
 
-  .navbar a:hover {
-    border: none;
-    color: #000000;
-    background: #ffd60a;
-    width: 100%;
+  .header-logo img {
+    margin-right: 0;
+    width: 200px;
   }
 
   .navbar a::after {
     display: none;
   }
-  
+
   .header-btn button {
     display: none;
   }
