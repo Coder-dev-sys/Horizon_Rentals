@@ -225,7 +225,7 @@ input[type]:checked~span.middle {
 
 /**    Home Section   **/
 .home {
-  width: 100%;
+  width: 89%;
   min-width: 100vh;
   position: relative;
   display: grid;
