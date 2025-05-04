@@ -1,199 +1,178 @@
+/* Variables for consistent spacing and positioning */
 :root {
-  --main-color: #fe5b3d;
-  --second-color: #ffac38;
-  --text-color: #ffffff;
-  --gradient: linear-gradient(#ffffff, #ffd60a);
+  --header-padding-desktop: 15px 20px;
+  --header-padding-mobile: 10px 15px;
+  --menu-transition: all 0.4s ease-in-out;
+  --accent-color: #e4d6a1;
 }
 
-/* Destop View */
-@media (min-width: 992px) and (max-width: 1199.98px) {
+/* Base header styles that apply to all screen sizes */
+header {
+  padding: var(--header-padding-desktop);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--menu-transition);
+  top: 5px;
+}
 
-  /* Header Section */
+.header-logo img {
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+/* Default navbar styles (for desktop) */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  position: relative;
+  margin-right: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  bottom: -5px;
+  left: 20px;
+  transition: 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 70%;
+}
+
+#menu-icon {
+  display: none;
+  /* Hidden on desktop */
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Common mobile menu styles */
+@media (max-width: 991.98px) {
+  header {
+    padding: var(--header-padding-mobile);
+  }
+
+  #menu-icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: -500px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
+    z-index: 1000;
+    align-items: flex-start;
+    transition: var(--menu-transition);
+    width: 250px;
+  }
+
+  .navbar a {
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    display: block;
+    border-left: 2px solid var(--accent-color);
+    width: calc(100% - 2rem);
+  }
+
+  header .navbar.active {
+    top: 116%;
+    border-radius: 8px;
+    right: 0;
+    width: -webkit-fill-available;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+}
+
+/* Large desktop */
+@media (min-width: 992px) and (max-width: 1199.98px) {
   header {
     justify-content: space-evenly;
     left: 35px;
   }
-
 }
 
-/* Tablet View */
+/* Tablet */
 @media (min-width: 768px) and (max-width: 991.98px) {
-
-  /** Header Section **/
   header {
-    padding: 10px 12px;
+    left: 40px;
+  }
+
+  .header-btn button {
+    right: 70px;
+  }
+}
+
+/* Large Mobile */
+@media (min-width: 660px) and (max-width: 767.98px) {
+  header {
     left: 45px;
   }
 
+  .header-btn button {
+    right: 75px;
+  }
+}
+
+/* Medium Mobile */
+@media (min-width: 441.98px) and (max-width: 659.98px) {
+  header {
+    padding: 10px 0px;
+    margin-left: -54px;
+  }
+
   #menu-icon {
-    display: block;
-    position: absolute;
-    right: 45px;
-  }
-
-  header .navbar {
-    position: absolute;
-    top: -500px;
-    left: 20px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
-    transition: 0.3 ease;
-    text-align: left;
-    z-index: 1000;
-    align-items: self-start;
-  }
-
-  .navbar a {
-    padding: 1rem;
-    border-left: 2px solid #FFC300;
-    margin: 1rem;
-    display: block;
-  }
-
-  header .navbar.active {
-    top: 125%;
-    border-radius: 15px;
-    left: -3px;
-    background: black;
+    right: 20px;
   }
 
   .header-logo img {
-    margin-right: 0;
-    width: 200px;
-  }
-
-  .navbar a::after {
-    display: none;
-  }
-
-  .header-btn button {
-    display: none;
-  }
-
-  /** Home Section **/
-  .form-container form {
-    left: 25px;
-  }
-
-}
-
-/* Landscape Mobile View */
-@media (min-width: 576px) and (max-width: 767.98px) {
-
-  /** Header Section **/
-  header {
-    padding: 10px 12px;
+    width: 170px;
     margin-left: 8px;
-
-  }
-
-  #menu-icon {
-    display: block;
-    position: absolute;
-    right: 45px;
-  }
-
-  header .navbar {
-    position: absolute;
-    top: -500px;
-    left: 20px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
-    transition: 0.3 ease;
-    text-align: left;
-    z-index: 1000;
-    align-items: self-start;
-  }
-
-  .navbar a {
-    padding: 1rem;
-    border-left: 2px solid #FFC300;
-    margin: 1rem;
-    display: block;
-  }
-
-  header .navbar.active {
-    top: 125%;
-    border-radius: 15px;
-    left: -3px;
-    background: black;
-  }
-
-  .header-logo img {
-    margin-right: 0;
-    width: 200px;
-  }
-
-  .navbar a::after {
-    display: none;
   }
 
   .header-btn button {
-    display: none;
+    right: 85px;
   }
-
 }
 
-/* Mobile View */
-@media (max-width: 575.98px) {
-
-  /** Header Section **/
+/* Small Mobile */
+@media (max-width: 440px) {
   header {
-    padding: 10px 12px;
-    width: 101%;
-    margin-left: 17px;
-    top: 5px;
+    padding: 10px 95px;
+    margin-left: 0;
   }
 
   #menu-icon {
-    display: block;
-    position: absolute;
-    right: 45px;
-  }
-
-  header .navbar {
-    position: absolute;
-    top: -500px;
-    left: 20px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.3);
-    transition: 0.3 ease;
-    text-align: left;
-    z-index: 1000;
-    align-items: self-start;
-  }
-
-  .navbar a {
-    padding: 1rem;
-    border-left: 2px solid #FFC300;
-    margin: 1rem;
-    display: block;
-  }
-
-  header .navbar.active {
-    top: 125%;
-    border-radius: 15px;
-    left: -3px;
-    background: black;
+    right: 15px;
   }
 
   .header-logo img {
-    margin-right: 0;
-    width: 200px;
-  }
-
-  .navbar a::after {
-    display: none;
+    width: 160px;
+    margin-left: -30px;
   }
 
   .header-btn button {
-    display: none;
+    right: 10px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
-
 }

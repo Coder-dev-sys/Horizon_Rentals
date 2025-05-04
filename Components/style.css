@@ -5,15 +5,17 @@ Note - 1 : Google Fonts Are Stored Locally
 
 /**    General    **/
 @font-face {
-  src: url(Fonts/Quicksand-Medium.ttf);
+  src: url(Fonts/Quicksand/Quicksand-Medium.ttf);
   font-family: Quicksand-Medium;
+}
+@font-face {
+  src: url(Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+  font-family: BebasNeue-Regular;
 }
 
 :root {
-  --main-color: #fe5b3d;
-  --second-color: #ffac38;
   --text-color: #ffffff;
-  --gradient: linear-gradient(#ffffff, #ffd60a);
+  --accent-color: #e4d6a1;
 }
 
 * {
@@ -72,7 +74,7 @@ header {
 
 
 .navbar a:hover {
-  color: #FFC300;
+  color: var(--accent-color);
 }
 
 .navbar a {
@@ -96,7 +98,7 @@ header {
 /* Sign In Button */
 .sign-in-btn {
   position: relative;
-  padding: 10px 20px;
+  padding: 10px 15px;
   border-radius: 7px;
   border: 1px solid #FFC300;
   font-size: 14px;
@@ -238,9 +240,39 @@ input[type]:checked~span.middle {
   grid-template-columns: repeat(2, 1fr);
   left: -80px;
 }
-
-.text span {
-  color: var(var(--main-color));
+.title-text {
+  margin-left: 76px;
+  width: 530px;
+  margin-top: 60px;
+}
+.title-text h4  {
+  font-size: 19px;
+}
+.title-text p {
+  font-size: 70px;
+  width: 102%;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s,
+            cursor .4s step-end infinite alternate;
+            border-right: 1px solid var(--accent-color);
+  font-family: BebasNeue-Regular, sans-serif;
+  color: var(--accent-color);
+  margin-bottom: 4px;
+  margin-top: 15px;
+}
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+section {
+  padding: 82px 100px;
 }
 
 
@@ -277,6 +309,4 @@ input[type]:checked~span.middle {
   font-size: 1rem;
 }
 
-section {
-  padding: 82px 100px;
-}
+
