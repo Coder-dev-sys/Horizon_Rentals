@@ -6,6 +6,7 @@ const navbar = document.querySelector(".navbar");
 if (menuCheckbox) {
   menuCheckbox.addEventListener("change", () => {
     navbar.classList.toggle("active");
+    navbar.removeAttribute('inert');
   });
 }
 // Close menu when clicking outside
@@ -17,6 +18,7 @@ window.addEventListener("click", (e) => {
     navbar.classList.remove("active");
     if (menuCheckbox.checked) {
       menuCheckbox.checked = false;
+      navbar.removeAttribute('inert');
     }
   }
 });
@@ -25,6 +27,7 @@ window.addEventListener("scroll", () => {
   navbar.classList.remove("active");
   if (menuCheckbox.checked) {
     menuCheckbox.checked = false;
+    navbar.removeAttribute('inert');
   }
 });
 

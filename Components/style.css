@@ -74,13 +74,14 @@ header {
 
 .navbar a:hover {
   color: var(--accent-color);
+  font-size: 18px;
 }
 
 .navbar a {
   font-size: 1rem;
   padding: 10px 31px;
   font-weight: 700;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 #menu-icon {
@@ -233,7 +234,6 @@ input[type]:checked~span.middle {
 /**    Home Section   **/
 .home {
   width: auto;
-  /* max-width: 100vh; */
   max-width: clamp(1.8rem, calc(7vw + 1rem), 5rem);
   position: relative;
   display: grid;
@@ -262,6 +262,7 @@ input[type]:checked~span.middle {
   color: var(--accent-color);
   margin-bottom: 5px;
   margin-top: 5px;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
 }
 
 @keyframes cursor {
