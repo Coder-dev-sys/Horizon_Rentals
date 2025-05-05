@@ -36,7 +36,6 @@ body {
   background-size: cover;
 }
 
-
 /**    Navbar Section   **/
 header {
   position: sticky;
@@ -239,15 +238,19 @@ input[type]:checked~span.middle {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(2, 1fr);
-  right: clamp(9rem, calc(1vw + 1rem), 5rem);
+  right: clamp(8.5rem, calc(1vw + 1rem), 5rem);
+  top: clamp(3rem, calc(1vw + 1rem), 5rem);
 }
 
 .title-text {
   margin-left: 76px;
-  width: auto;
-  margin-top: 60px;
-  font-size: 15px;
+    width: auto;
+    margin-top: 40px;
+    font-size: 15px;
+}
 
+.title-text h4 {
+  font-size: clamp(0.5rem, calc(5vw + 0rem), 1rem);
 }
 
 .title-text p {
@@ -281,19 +284,20 @@ section {
   padding: 35px 100px;
 }
 
-
-
-.form-container form {
+.date-container form {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem;
-  position: absolute;
-  bottom: 1rem;
-  left: 100px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: -10.5rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 50px rgba(227, 228, 237, 0.37);
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
+    padding: 20px;
+    border-radius: 0px 15px 15px 15px;    
+    width: clamp(38rem, calc(1vw + 1rem), 5rem);
+    left: 37vw;
 }
 
 .input-box {
@@ -303,14 +307,15 @@ section {
 }
 
 .input-box span {
-  font-weight: 500;
+  font-size: clamp(0.5rem, calc(5vw + 0rem), 1rem);
+  padding: 0px 0px 7px 0px;
 }
 
-.input-box input {
-  padding: 7px;
+.input-box input {    
+  padding: 7px 0px 7px 0px; 
   outline: none;
   border: none;
-  background: #495057;
-  border-radius: 0.5rem;
+  border-bottom: 1px solid #FFC300;
+  background: transparent;
   font-size: 1rem;
 }
