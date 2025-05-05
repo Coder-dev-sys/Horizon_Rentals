@@ -1,6 +1,5 @@
 /*
 Note - 1 : Google Fonts Are Stored Locally
-
 */
 
 /**    General    **/
@@ -33,7 +32,7 @@ Note - 1 : Google Fonts Are Stored Locally
   --small-text: 0.9rem;
   
   /* Animation */
-  --transition-speed: all 0.3s ease-in-out;
+  --transition-speed: 0.3s ease;
 }
 
 * {
@@ -72,10 +71,10 @@ header {
 }
 
 .header-logo img {
-  margin-left: 19px;
   width: 200px;
   border-right: 1px solid var(--accent-color-hover);
   padding-right: 40px;
+  margin-left: 19px;
   transition: var(--transition-speed);
 }
 
@@ -90,16 +89,16 @@ header {
   list-style: none;
 }
 
-.navbar a:hover {
-  color: var(--accent-color);
-  font-size: 18px;
-}
-
 .navbar a {
   font-size: var(--body-text);
   padding: 10px 31px;
   font-weight: 700;
   transition: var(--transition-speed);
+}
+
+.navbar a:hover {
+  color: var(--accent-color);
+  font-size: 18px;
 }
 
 #menu-icon {
@@ -188,7 +187,6 @@ input[type="checkbox"] {
   cursor: pointer;
   width: 50px;
   height: 40px;
-  right: -125px;
 }
 
 .bar span {
@@ -234,41 +232,35 @@ input[type]:checked~span.middle {
   opacity: 0;
 }
 
-
-
 /**    Home Section   **/
 .home {
   width: 100%;
+  padding: var(--section-padding);
+  display: flex;
+  flex-direction: column;
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  right: clamp(8.5rem, calc(1vw + 1rem), 5rem);
+  margin-top: 2rem;
 }
 
 .title-text {
-  margin-left: 76px;
-    width: auto;
-    margin-top: 40px;
-    font-size: 15px;
+  max-width: 800px;
+  margin-bottom: 3rem;
 }
 
 .title-text h4 {
-  font-size: clamp(0.5rem, calc(5vw + 0rem), 1rem);
+  font-size: var(--heading-size);
   margin-bottom: 0.5rem;
 }
 
 .title-text p {
-  font-size: clamp(1.8rem, calc(7vw + 1rem), 5rem);
-  width: 105%;
+  font-size: var(--title-size);
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 2s,
-    cursor .4s step-end infinite alternate;
+  animation: typing 2s, cursor .4s step-end infinite alternate;
   border-right: 1px solid var(--accent-color);
   font-family: BebasNeue-Regular, sans-serif;
   color: var(--accent-color);
-  margin-bottom: 5px;
-  margin-top: 5px;
+  margin: 0.5rem 0;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
 }
 
@@ -282,39 +274,34 @@ input[type]:checked~span.middle {
   from {
     width: 0;
   }
+  to {
+    width: 100%;
+  }
 }
 
-section {
-  padding: 35px 100px;
-}
-
+/* Booking Form */
 .date-container {
-  width: auto;
+  width: 100%;
   margin: 2rem 0;
-  padding-top: clamp(16.5rem, 1.8rem + 3vw, 5rem);
-  position: absolute;
-  left: clamp(10.5rem, 1.8rem + 3vw, 5rem);
-  right: clamp(-5.5rem, -5rem + -3vw, -4rem);
 }
 
 .date-container form {
   display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 1rem;
-    bottom: -10.5rem;
-    backdrop-filter: var(--backdrop-blur);
-    box-shadow: 0px 4px 50px rgba(227, 228, 237, 0.37);
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
-    padding: 20px;
-    border-radius: 0px 15px 15px 15px;    
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;    
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1.5rem;
+  backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0px 4px 50px var(--shadow-color);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .input-box {
-  flex: 1 1 90px;
+  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
 }
@@ -323,19 +310,18 @@ section {
   font-size: var(--small-text);
   font-weight: 600;
   margin-bottom: 8px;
-  padding-left: 12px;
+  color: var(--accent-color);
 }
 
-.input-box input {    
+.input-box input {
   padding: 12px 15px;
   outline: none;
   border: 1px solid transparent;
   border-bottom: 2px solid var(--accent-color-hover);
   background: rgba(255, 255, 255, 0.1);
   font-size: var(--body-text);
-  border-radius: 7px 7px 0 0;
+  border-radius: 4px 4px 0 0;
   transition: var(--transition-speed);
-  color: rgba(255, 255, 255, 0.6);
 }
 
 .input-box input:focus {
@@ -344,8 +330,13 @@ section {
   box-shadow: 0 0 8px rgba(255, 195, 0, 0.3);
 }
 
+.input-box input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Calendar styling */
 input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(1);
+  filter: invert(0.8) sepia(1) saturate(5) hue-rotate(35deg);
   cursor: pointer;
 }
 
@@ -362,12 +353,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   transition: var(--transition-speed);
   flex: 0 0 auto;
   font-size: var(--small-text);
-  margin-bottom: 5px;
 }
 
 .btn-submit:hover {
   background-color: var(--accent-color-hover);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 

@@ -1,0 +1,252 @@
+/* Variables for consistent spacing and positioning */
+:root {
+  --header-padding-desktop: 10px 20px;
+  --header-padding-mobile: 10px 15px;
+  --menu-transition: all 0.4s ease-in-out;
+  --mobile-menu-bg: rgba(0, 0, 0, 0.95);
+  --menu-border: 2px solid var(--accent-color-hover);
+}
+
+/* Default navbar styles (for desktop) */
+.navbar a {
+  position: relative;
+  margin-right: 0;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  bottom: -5px;
+  left: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover::after {
+  width: calc(100% - 40px);
+}
+
+/* Common responsive styles */
+@media (max-width: 1200px) {
+  :root {
+    --section-padding: 30px 60px;
+  }
+  
+  /* Adjust typing animation width for smaller screens */
+  .title-text p {
+    max-width: 90%;
+  }
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 991.98px) {
+  :root {
+    --section-padding: 25px 40px;
+  }
+  
+  header {
+    padding: var(--header-padding-mobile);
+    width: 95%;
+  }
+
+  .header-logo img {
+    width: 160px;
+    padding-right: 20px;
+  }
+
+  #menu-icon {
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: -500px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--mobile-menu-bg);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
+    z-index: 999;
+    align-items: flex-start;
+    transition: var(--menu-transition);
+    opacity: 0.95;
+    border-radius: 10px;
+  }
+
+  .navbar a {
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    display: block;
+    border-left: var(--menu-border);
+    width: calc(100% - 2rem);
+  }
+
+  header .navbar.active {
+    top: 100%;
+    padding: 1rem 0;
+  }
+
+  .navbar a::after {
+    display: none;
+  }
+  
+  /* Adjust form for tablet */
+  .date-container form {
+    padding: 20px;
+    gap: 1rem;
+  }
+  
+  .input-box {
+    flex: 1 1 200px;
+  }
+  
+  .btn-submit {
+    padding: 10px 20px;
+  }
+}
+
+/* Medium size screens */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .home {
+    align-items: flex-start;
+  }
+  
+  .title-text {
+    max-width: 600px;
+  }
+}
+
+/* Mobile - Large */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  :root {
+    --section-padding: 20px 30px;
+  }
+  
+  .title-text p {
+    font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+  }
+  
+  .home {
+    align-items: center;
+  }
+  
+  .title-text {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .date-container form {
+    padding: 15px;
+  }
+  
+  .input-box span {
+    font-size: 0.85rem;
+  }
+  
+  .input-box input {
+    padding: 10px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Mobile - Small */
+@media (max-width: 575.98px) {
+  :root {
+    --section-padding: 15px 20px;
+  }
+  
+  header {
+    width: 100%;
+    border-radius: 0;
+    top: 0;
+    margin: 0;
+    padding: 10px 15px;
+  }
+  
+  .header-logo img {
+    width: 140px;
+    padding-right: 15px;
+    margin-left: 0;
+  }
+  
+  .sign-in-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+  
+  #menu-icon {
+    margin-left: auto;
+  }
+  
+  .bar {
+    right: 0;
+  }
+  
+  .home {
+    padding: 20px 15px;
+    margin-top: 1rem;
+  }
+  
+  .title-text {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .title-text p {
+    font-size: clamp(1.8rem, 1.2rem + 2vw, 2.5rem);
+    animation: none;
+    border-right: none;
+    white-space: normal;
+    overflow: visible;
+    text-align: center;
+  }
+  
+  .date-container form {
+    padding: 15px;
+    gap: 0.8rem;
+  }
+  
+  .input-box {
+    flex: 1 1 100%;
+  }
+  
+  .input-box input {
+    padding: 8px 10px;
+  }
+  
+  .btn-submit {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Fix for the hamburger menu placement */
+@media (max-width: 459.98px) {
+  header {
+    justify-content: space-between;
+  }
+  
+  #menu-icon {
+    order: 3;
+  }
+  
+  .header-btn {
+    order: 2;
+  }
+  
+  .header-logo {
+    order: 1;
+  }
+}
