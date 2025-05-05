@@ -123,19 +123,6 @@ header {
   .header-btn button {
     right: 75px;
   }
-  /* body */
-  /* .date-container form {
-        display: flex
-;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        width: clamp(20rem, calc(1vw + 1rem), 5rem);
-        left: clamp(13rem, calc(1vw + 1rem), 5rem);
-        bottom: -14rem;
-    } */
 }
 
 /* Medium Mobile */
@@ -164,13 +151,12 @@ header {
   }
 }
 
-
 /* Small Mobile */
 @media (max-width: 459.98px) {
   header {
     margin-left: clamp(0.5rem, -5rem + -3vw, -4rem);
     width: auto;
-}
+  }
 
   .header-logo img {
     padding-right: 15px;

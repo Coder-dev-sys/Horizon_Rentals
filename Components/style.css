@@ -1,6 +1,5 @@
 /*
 Note - 1 : Google Fonts Are Stored Locally
-
 */
 
 /**    General    **/
@@ -54,6 +53,8 @@ body {
   background-size: cover;
   min-height: 100vh;
 }
+
+
 
 /**    Navbar Section   **/
 header {
