@@ -1,5 +1,5 @@
 /*
-Note - 1 : Google Fonts Are Stored Locally
+Note - 1 : Photos, Logos, Icons, Google Fonts Are Stored Locally
 */
 
 /**    General    **/
@@ -20,17 +20,17 @@ Note - 1 : Google Fonts Are Stored Locally
   --accent-color-hover: #FFC300;
   --shadow-color: rgba(227, 228, 237, 0.37);
   --backdrop-blur: blur(5px);
-  
+
   /* Spacing */
   --section-padding: 35px 100px;
   --header-padding: 10px 20px;
-  
+
   /* Typography */
   --heading-size: clamp(0.9rem, 1rem + 0.5vw, 1.2rem);
   --title-size: clamp(2.5rem, 1.8rem + 3vw, 5rem);
   --body-text: 1rem;
   --small-text: 0.9rem;
-  
+
   /* Animation */
   --transition-speed: all 0.3s ease-in-out;
 }
@@ -125,7 +125,7 @@ header {
   font-weight: 600;
   letter-spacing: 2px;
   background: transparent;
-  color: #fff;
+  color: var(--text-color);
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
   transition: all 0.2s ease-in;
@@ -135,7 +135,7 @@ header {
   background: var(--accent-color-hover);
   box-shadow: 0 0 30px 5px rgb(168, 168, 168);
   transition: all 0.2s ease-out;
-  color: #001D3D;
+  color: #000000f2;
 }
 
 .sign-in-btn:hover::before {
@@ -248,9 +248,9 @@ input[type]:checked~span.middle {
 
 .title-text {
   margin-left: 76px;
-    width: auto;
-    margin-top: 40px;
-    font-size: 15px;
+  width: auto;
+  margin-top: 40px;
+  font-size: 15px;
 }
 
 .title-text h4 {
@@ -300,18 +300,19 @@ section {
 
 .date-container form {
   display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
-    gap: 1rem;
-    bottom: -10.5rem;
-    backdrop-filter: var(--backdrop-blur);
-    box-shadow: 0px 4px 50px rgba(227, 228, 237, 0.37);
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
-    padding: 20px;
-    border-radius: 0px 15px 15px 15px;    
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;    
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1rem;
+  bottom: -10.5rem;
+  backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0px 4px 50px rgba(227, 228, 237, 0.37);
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
+  padding: 20px;
+  border-radius: 0px 15px 15px 15px;
+  width: 100%;
+  max-width: clamp(42.5rem, 1.8rem + 3vw, 5rem);
+  margin: 0 auto;
 }
 
 .input-box {
@@ -327,8 +328,8 @@ section {
   padding-left: 12px;
 }
 
-.input-box input {    
-  padding: 12px 15px;
+.input-box input {
+  padding: 12px;
   outline: none;
   border: 1px solid transparent;
   border-bottom: 2px solid var(--accent-color-hover);
@@ -350,10 +351,56 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 
+.search-icon {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+  border: 1px solid var(--accent-color-hover);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--accent-color);
+}
+
+.search-icon:hover {
+  background-color: var(--accent-color-hover);
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.5);
+  transition: var(--transition-speed);
+}
+
+.search-icon:hover .search_circle,
+.search-icon:hover .search_rectangle {
+  border-color: #000000f2;
+}
+
+.search_circle {
+  position: relative;
+  width: 15px;
+  height: 15px;
+  left: 2px;
+  border: 2px solid #000000f2;
+  border-radius: 100px;
+  margin: 0 0 17px -1px;
+}
+
+.search_rectangle {
+  position: relative;
+  width: 8px;
+  transform: rotate(45deg);
+  border: 2px solid #000000f2;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  margin: 0px 0px 15px -2px;
+}
+
+/* 
+input button - search
 .btn-submit {
   padding: 12px 24px;
   background-color: var(--accent-color);
-  color: #001D3D;
+  color: #000000f2;
   border: none;
   border-radius: 7px;
   font-weight: 700;
@@ -370,8 +417,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: var(--accent-color-hover);
   transform: translateY(-4px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: var(--transition-speed);
 }
 
 .btn-submit:active {
   transform: translateY(0);
-}
+} */
+
+
+
+/**    Features Section   **/
+
+
+
+/**    Footer Section   **/

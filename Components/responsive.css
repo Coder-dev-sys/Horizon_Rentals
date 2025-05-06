@@ -1,4 +1,4 @@
-/* Variables for consistent spacing and positioning */
+/**    General    **/
 :root {
   --header-padding-desktop: 10px 20px;
   --header-padding-mobile: 10px 15px;
@@ -9,7 +9,7 @@
   --accent-color: #e4d6a1;
 }
 
-/* Base header styles that apply to all screen sizes */
+/* Base Navbar style that apply to all screen sizes */
 header {
   padding: var(--header-padding-desktop);
   transition: var(--menu-transition);
