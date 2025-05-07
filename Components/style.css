@@ -1,6 +1,4 @@
-/*
-Note - 1 : Photos, Logos, Icons, Google Fonts Are Stored Locally
-*/
+/* Note - 1 : Photos, Logos, Icons, Google Fonts Are Stored Locally */
 
 /**    General    **/
 @font-face {
@@ -54,6 +52,8 @@ body {
 }
 
 
+
+/**    HOME PAGE   **/
 
 /**    Navbar Section   **/
 header {
@@ -235,7 +235,6 @@ input[type]:checked~span.middle {
 }
 
 
-
 /**    Home Section   **/
 .home {
   width: 100%;
@@ -262,7 +261,7 @@ input[type]:checked~span.middle {
   width: 105%;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 2s,
+  animation: typing 3s,
     cursor .4s step-end infinite alternate;
   border-right: 1px solid var(--accent-color);
   font-family: BebasNeue-Regular, sans-serif;
@@ -403,9 +402,23 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 
-
 /**    Features Section   **/
+.features {
+  width: 100%;
+  height: 100%;
+  background-color: #212121;
+  align-items: center;
+  justify-content: center;
+}
 
+.card {
+  width: 190px;
+  height: 254px;
+  border-radius: 30px;
+  background: #212121;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25),
+    -15px -15px 30px rgb(60, 60, 60);
+}
 
 
 /**    Footer Section   **/
@@ -557,4 +570,122 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
+}
+
+
+
+/**    SIGN-IN PAGE   **/
+
+/**    Form Section   **/
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.sign-up-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: #FF416C;
+  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+  color: #FFFFFF;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+  border-radius: 50px;
+}
+
+.container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+  transform: translateX(20%);
 }
