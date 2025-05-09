@@ -15,7 +15,7 @@
   /* Colors */
   --text-color: #ffffff;
   --accent-color: #e4d6a1;
-  --accent-color-hover: #FFC300;
+  --accent-color-hover: #ffc300;
   --shadow-color: rgba(227, 228, 237, 0.37);
   --backdrop-blur: blur(5px);
 
@@ -51,13 +51,11 @@ body {
   background-size: cover;
 }
 
-
-
 /**    HOME PAGE   **/
 
 /**    Navbar Section   **/
 header {
-  position: sticky;
+  position: fixed;
   width: 90%;
   max-width: 1400px;
   margin: 7px auto 0;
@@ -69,6 +67,8 @@ header {
   backdrop-filter: var(--backdrop-blur);
   box-shadow: 0px 4px 50px var(--shadow-color);
   padding: var(--header-padding);
+  left: 75px;
+  top: 0;
 }
 
 .header-logo img {
@@ -113,6 +113,39 @@ header {
   align-items: center;
 }
 
+/* Dropdown Menu */
+.navbar .dropdown {
+  position: relative;
+}
+
+.navbar .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.75);
+  min-width: 150px;
+  top: 5.5vh;
+  left: 0;
+  z-index: 999;
+  border-radius: 10px;
+}
+
+.navbar .dropdown-menu li {
+  list-style: none;
+}
+
+.navbar .dropdown-menu a {
+  display: block;
+  padding: 15px 0 20px 30px;
+  color: var(--text-color);
+  transition: var(--transition-speed);
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
 /* Sign In Button */
 .sign-in-btn {
   position: relative;
@@ -142,7 +175,7 @@ header {
 }
 
 .sign-in-btn::before {
-  content: '';
+  content: "";
   display: block;
   width: 0px;
   height: 86%;
@@ -234,14 +267,14 @@ input[type]:checked~span.middle {
   opacity: 0;
 }
 
-
 /**    Home Section   **/
 .home {
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
-  min-height: 80vh;
+  min-height: 65vh;
+  margin-top: 11vh;
 }
 
 .title-text {
@@ -261,8 +294,8 @@ input[type]:checked~span.middle {
   width: 105%;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 3s,
-    cursor .4s step-end infinite alternate;
+  animation: typing 3s forwards, cursor 0.3s step-end infinite alternate,
+    hideCursor 0s linear 3s forwards;
   border-right: 1px solid var(--accent-color);
   font-family: BebasNeue-Regular, sans-serif;
   color: var(--accent-color);
@@ -281,10 +314,16 @@ input[type]:checked~span.middle {
   from {
     width: 0;
   }
+
+  to {
+    width: 100%;
+  }
 }
 
-section {
-  padding: 35px 100px;
+@keyframes hideCursor {
+  to {
+    border-right-color: transparent;
+  }
 }
 
 .date-container {
@@ -401,25 +440,220 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   margin: 0px 0px 15px -2px;
 }
 
-
 /**    Features Section   **/
-.features {
+/* .features {
+  background-color: #121212;
+  padding: 30px 0px 15px 0px;
   width: 100%;
-  height: 100%;
-  background-color: #212121;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.features-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 50px;
+  position: relative;
+}
+
+.features-content {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  padding: 10px 0;
+  flex-wrap: nowrap;
 }
 
 .card {
-  width: 190px;
-  height: 254px;
-  border-radius: 30px;
-  background: #212121;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25),
-    -15px -15px 30px rgb(60, 60, 60);
+  min-width: 190px;
+  height: 120px;
+  border-radius: 20px;
+  /* background: rgba(18, 18, 18, 0.85); 
+  background: #1a1a1a;
+  position: relative;
+  padding: 1.8rem;
+  border: 3px solid var(--accent-color);
+  transition: 0.5s ease-out;
+  overflow: visible;
+  flex-shrink: 0;
 }
 
+.card:hover {
+  border-color: var(--accent-color-hover);
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+}
+
+.features-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.card-details {
+  height: 100%;
+  gap: 0.5em;
+  display: grid;
+  place-content: center;
+  display: inline-block;
+}
+
+.text-body {
+  color: rgb(134, 134, 134);
+} */
+
+.features {
+  background: linear-gradient(to bottom, #121212, #0a0a0a);
+  padding: 50px 0px 30px 0px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-top: 1px solid rgba(228, 214, 161, 0.1);
+  border-bottom: 1px solid rgba(228, 214, 161, 0.1);
+}
+
+.features::before {
+  content: "Our Features";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: BebasNeue-Regular, sans-serif;
+  font-size: 2rem;
+  color: var(--accent-color);
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.features-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 0 50px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.features-content {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+  padding: 10px 0;
+  flex-wrap: nowrap; 
+}
+
+.card {
+  min-width: 220px;
+  height: 150px;
+  border-radius: 15px;
+  background: rgba(26, 26, 26, 0.9);
+  position: relative;
+  padding: 1.8rem;
+  border: 2px solid var(--accent-color);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 195, 0, 0.1) 0%, rgba(0, 0, 0, 0) 60%);
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.card:hover {
+  border-color: var(--accent-color-hover);
+  box-shadow: 0 15px 30px rgba(255, 195, 0, 0.2);
+  transform: translateY(-15px) scale(1.05);
+}
+
+.features-title {
+  font-size: 1.3rem;
+  font-weight: bold;    
+  margin-bottom: 15px;
+  position: relative;
+  color: var(--accent-color);
+  display: inline-block;
+}
+
+.features-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-color-hover);
+  transition: width 0.3s ease;
+}
+
+.card:hover .features-title::after {
+  width: 100%;
+}
+
+.card-details {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.text-body {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.card:hover .text-body {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .features {
+    padding: 30px 0 15px 0;
+  }
+
+  .features-carousel-container {
+    padding: 0 30px;
+  }
+
+  .card {
+    min-width: 170px;
+    height: 230px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-carousel-container {
+    padding: 0 15px;
+  }
+
+  .card {
+    min-width: 150px;
+    height: 210px;
+    padding: 1.2rem;
+  }
+
+  .features-title {
+    font-size: 1rem;
+  }
+
+  .text-body {
+    font-size: 0.9rem;
+  }
+}
 
 /**    Footer Section   **/
 .footer {
@@ -427,8 +661,8 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   background: rgba(0, 0, 0, 0.95);
   color: var(--text-color);
   padding: 50px 50px 15px 50px;
-  margin-top: 40px;
-  opacity: 90%;
+  opacity: 80%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-content {
@@ -491,7 +725,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 .footer-box a {
-  color: #fff;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   transition: color 0.3s ease;
   display: inline-block;
@@ -572,8 +806,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   font-size: 14px;
 }
 
-
-
 /**    SIGN-IN PAGE   **/
 
 /**    Form Section   **/
@@ -639,12 +871,12 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 .overlay {
-  background: #FF416C;
-  background: linear-gradient(to right, #FF4B2B, #FF416C);
+  background: #ff416c;
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
-  color: #FFFFFF;
+  color: #ffffff;
   position: relative;
   left: -100%;
   height: 100%;
