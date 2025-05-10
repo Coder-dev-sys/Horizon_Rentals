@@ -1,3 +1,17 @@
+/** Page Loader  **/
+document.addEventListener('DOMContentLoaded', function() {
+  const loader = document.querySelector('.page-loader');
+  
+  // Hide loader after content is loaded
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      loader.classList.add('fade-out');
+    }, 800);
+  });
+});
+
+
+
 /**  Navbar Section  **/
 
 // Toggle menu on mobile devices 
