@@ -452,7 +452,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   width: 100%;
   overflow: hidden;
   position: relative;
-  border-top: 1px solid rgba(228, 214, 161, 0.1);
   border-bottom: 1px solid rgba(228, 214, 161, 0.1);
 }
 
@@ -584,6 +583,101 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   margin-right: 8px;
   vertical-align: middle;
 }
+
+
+
+/**    Review Section   **/
+.review {
+  background: linear-gradient(to bottom, #121212, #0a0a0a);
+  padding: 50px 50px 15px 50px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(228, 214, 161, 0.1);
+}
+
+.review-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.review-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--accent-color);
+}
+.review-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.review-card {
+  flex: 1 1 200px;
+  background: rgba(0, 0, 0, 0.95);
+  color: var(--text-color);
+  padding: 50px 50px 15px 50px;
+  opacity: 80%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.review-card-details {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.review-card:hover {
+  border-color: var(--accent-color-hover);
+  box-shadow: 0 15px 30px rgba(255, 195, 0, 0.2);
+  transform: translateY(-15px) scale(1.05);
+}
+
+.review-card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  position: relative;
+  color: var(--accent-color);
+  display: inline-block;
+}
+
+.review-card-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--accent-color-hover);
+  transition: width 0.3s ease;
+}
+
+.review-card:hover .review-card-title::after {
+  width: 100%;
+}
+
+.review-card-text {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.review-card:hover .review-card-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
 
 
 
