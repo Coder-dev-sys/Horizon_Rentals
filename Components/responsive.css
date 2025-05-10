@@ -105,12 +105,34 @@ header {
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 991.98px) {
+
+  /* Navbar Section */
   header {
     left: 40px;
   }
 
   .header-btn button {
     right: 70px;
+  }
+
+  /* Features Section */
+  .features {
+    padding: 30px 0 15px 0;
+  }
+
+  .features-carousel-container {
+    padding: 0 30px;
+  }
+
+  .card {
+    min-width: 170px;
+    padding: 1.5rem;
+  }
+
+  .nav-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
   }
 }
 
@@ -127,6 +149,12 @@ header {
 
 /* Medium Mobile */
 @media (min-width: 460px) and (max-width: 659.98px) {
+  body {
+    background-attachment: scroll;
+    background-position: center top;
+  }
+
+  /* Navbar Section */
   header {
     padding: 10px 0px;
     left: 25px;
@@ -148,6 +176,24 @@ header {
 
   .bar {
     right: -6px;
+  }
+
+  /* Features Section */
+  .features-carousel-container {
+    padding: 0 15px;
+  }
+
+  .card {
+    min-width: 150px;
+    padding: 1.2rem;
+  }
+
+  .features-title {
+    font-size: 1rem;
+  }
+
+  .text-body {
+    font-size: 0.9rem;
   }
 }
 
