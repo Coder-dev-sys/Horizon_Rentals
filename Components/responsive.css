@@ -134,6 +134,20 @@ header {
     height: 30px;
     font-size: 1rem;
   }
+
+  /* Vehicles Section */
+  .vehicles {
+    padding: 60px 30px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btns {
+    justify-content: center;
+  }
 }
 
 /* Large Mobile */
@@ -144,6 +158,28 @@ header {
 
   .header-btn button {
     right: 75px;
+  }
+
+  /* Vehicles Section */
+  .vehicles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .review-content {
+    flex-direction: column;
+  }
+
+  .review-card {
+    width: 100%;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-btns {
+    justify-content: center;
   }
 }
 
@@ -199,9 +235,11 @@ header {
 
 /* Small Mobile */
 @media (max-width: 459.98px) {
+
+  /* Navbar Section */
   header {
-    margin-left: clamp(0.5rem, -5rem + -3vw, -4rem);
-    width: auto;
+    margin-left: clamp(-4.5rem -72px, -5rem + -3vw, -4rem);
+    width: 100%;
   }
 
   .header-logo img {
@@ -216,5 +254,20 @@ header {
     right: 82px;
     padding: 8px 12px;
     font-size: 0.9rem;
+  }
+
+  /* Vehicles Section */
+  .vehicles {
+    padding: 40px 15px;
+  }
+
+  .filter-btns {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .filter-btns {
+    justify-content: center;
   }
 }

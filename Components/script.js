@@ -1,10 +1,10 @@
 /** Page Loader  **/
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const loader = document.querySelector('.page-loader');
-  
+
   // Hide loader after content is loaded
-  window.addEventListener('load', function() {
-    setTimeout(function() {
+  window.addEventListener('load', function () {
+    setTimeout(function () {
       loader.classList.add('fade-out');
     }, 800);
   });
@@ -70,6 +70,76 @@ const searchIcon = document.querySelector('.search-icon');
 
 searchIcon.addEventListener('click', () => {
   searchForm.submit();
+});
+
+
+// City Autocomplete
+document.addEventListener('DOMContentLoaded', function () {
+  const cityInput = document.getElementById('city');
+  let cities = [];
+
+  // Create autocomplete container
+  const autocompleteContainer = document.createElement('div');
+  autocompleteContainer.className = 'city-autocomplete';
+  cityInput.parentNode.appendChild(autocompleteContainer);
+
+  // Fetch cities from JSON file
+  fetch('Components/cities.json')
+    .then(response => response.json())
+    .then(data => {
+      cities = data.cities;
+    })
+    .catch(error => console.error('Error loading cities:', error));
+
+  // Filter cities based on input
+  cityInput.addEventListener('input', function () {
+    const inputValue = this.value.toLowerCase();
+
+    if (inputValue.length === 0) {
+      autocompleteContainer.innerHTML = '';
+      autocompleteContainer.classList.remove('show');
+      return;
+    }
+
+    const matchedCities = cities.filter(city =>
+      city.toLowerCase().startsWith(inputValue)
+    );
+
+    if (matchedCities.length > 0) {
+      displayCities(matchedCities);
+    } else {
+      autocompleteContainer.innerHTML = '';
+      autocompleteContainer.classList.remove('show');
+    }
+  });
+
+  // Display matched cities
+  function displayCities(matchedCities) {
+    autocompleteContainer.innerHTML = '';
+
+    matchedCities.forEach(city => {
+      const cityElement = document.createElement('div');
+      cityElement.className = 'city-item';
+      cityElement.textContent = city;
+
+      cityElement.addEventListener('click', function () {
+        cityInput.value = city;
+        autocompleteContainer.innerHTML = '';
+        autocompleteContainer.classList.remove('show');
+      });
+
+      autocompleteContainer.appendChild(cityElement);
+    });
+
+    autocompleteContainer.classList.add('show');
+  }
+
+  // Hide autocomplete when clicking outside
+  document.addEventListener('click', function (e) {
+    if (e.target !== cityInput) {
+      autocompleteContainer.classList.remove('show');
+    }
+  });
 });
 
 
@@ -157,6 +227,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
     card.addEventListener('mouseleave', () => {
       card.style.transform = '';
+    });
+  });
+});
+
+
+
+/**  Vehicles Section  **/
+document.addEventListener('DOMContentLoaded', function () {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const vehicleCards = document.querySelectorAll('.vehicle-card');
+  const searchInput = document.getElementById('vehicle-search');
+
+  // Filter by category (motorcycle/scooty)
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      // Remove active class from all buttons
+      filterBtns.forEach(b => b.classList.remove('active'));
+      // Add active class to clicked button
+      this.classList.add('active');
+
+      const filterValue = this.getAttribute('data-filter');
+
+      vehicleCards.forEach(card => {
+        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   });
 });
