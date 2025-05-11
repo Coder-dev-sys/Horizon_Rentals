@@ -14,7 +14,7 @@
     <!-- Page Loader -->
     <div class="page-loader">
         <div class="loader-content">
-            <img src="Components/Logo/final-removedbg.png" alt="Horizon Rentals" class="loader-logo">
+            <img src="Components/Logo/Bike.png" alt="Horizon Rentals" class="loader-logo">
             <div class="dots"></div>
         </div>
     </div>
@@ -51,8 +51,8 @@
         <div class="date-container">
             <form action="" class="search-form">
                 <div class="input-box">
-                    <span>City</span>
-                    <input type="search" name="city" id="city" placeholder="Search Pleaces" />
+                    <span>Location</span>
+                    <input type="search" name="city" id="city" placeholder="Search by City" />
                     <div class="city-autocomplete">
                         <div class="city-item"></div>
                     </div>
@@ -196,6 +196,7 @@
         <div class="vehicles-container">
             <div class="section-title">
                 <h2>Our Vehicle Fleet</h2>
+                <p>Find the best vehicle for you</p>
             </div>
             <div class="filter-container">
                 <div class="filter-btns">
@@ -207,7 +208,7 @@
             <div class="vehicles-grid">
                 <div class="vehicle-card" data-category="motorcycle">
                     <div class="vehicle-img">
-                        <img src="Components/Images/re classic 350.webp" alt="Royal Enfield Classic 350">
+                        <img src="Components/Images/Royal Enifield Classic 350.jpg" alt="Royal Enfield Classic 350">
                     </div>
                     <div class="vehicle-info">
                         <h3>Royal Enfield Classic 350</h3>
@@ -224,7 +225,7 @@
                 </div>
                 <div class="vehicle-card" data-category="motorcycle">
                     <div class="vehicle-img">
-                        <img src="/api/placeholder/300/200" alt="Bajaj Pulsar NS200">
+                        <img src="Components/Images/Bajaj Pulsar NS200.jpg" alt="Bajaj Pulsar NS200">
                     </div>
                     <div class="vehicle-info">
                         <h3>Bajaj Pulsar NS200</h3>
@@ -241,7 +242,7 @@
                 </div>
                 <div class="vehicle-card" data-category="scooty">
                     <div class="vehicle-img">
-                        <img src="/api/placeholder/300/200" alt="Honda Activa 6G">
+                        <img src="Components/Images/Honda Activa 6g.jpg" alt="Honda Activa 6G">
                     </div>
                     <div class="vehicle-info">
                         <h3>Honda Activa 6G</h3>
@@ -258,7 +259,7 @@
                 </div>
                 <div class="vehicle-card" data-category="scooty">
                     <div class="vehicle-img">
-                        <img src="/api/placeholder/300/200" alt="TVS Jupiter">
+                        <img src="Components/Images/TVS Jupiter.jpg" alt="TVS Jupiter">
                     </div>
                     <div class="vehicle-info">
                         <h3>TVS Jupiter</h3>
@@ -275,7 +276,7 @@
                 </div>
                 <div class="vehicle-card" data-category="motorcycle">
                     <div class="vehicle-img">
-                        <img src="/api/placeholder/300/200" alt="KTM Duke 200">
+                        <img src="Components/Images/KTM Duke 200.jpg" alt="KTM Duke 200">
                     </div>
                     <div class="vehicle-info">
                         <h3>KTM Duke 200</h3>
@@ -292,7 +293,7 @@
                 </div>
                 <div class="vehicle-card" data-category="scooty">
                     <div class="vehicle-img">
-                        <img src="/api/placeholder/300/200" alt="Suzuki Access 125">
+                        <img src="Components/Images/Suzuki Access 125.jpg" alt="Suzuki Access 125">
                     </div>
                     <div class="vehicle-info">
                         <h3>Suzuki Access 125</h3>
@@ -302,10 +303,107 @@
                             <span><i class="spec-icon">💼</i> 2 People</span>
                         </div>
                         <div class="vehicle-price">
+                            <span class="price">₹399</span>/day
+                        </div>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="vehicle-card" data-category="motorcycle">
+                    <div class="vehicle-img">
+                        <img src="Components/Images/Yamaha R15.jpg" alt="Yamaha R15">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Yamaha R15</h3>
+                        <div class="vehicle-specs">
+                            <span><i class="spec-icon">🛢️</i> 155cc</span>
+                            <span><i class="spec-icon">⚙️</i> Manual</span>
+                            <span><i class="spec-icon">💼</i> 2 People</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="price">₹699</span>/day
+                        </div>
+                        <a href="#" class="book-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="vehicle-card" data-category="scooty">
+                    <div class="vehicle-img">
+                        <img src="Components/Images/Yamaha Aerox 155.jpg" alt="Yamaha Aerox 155">
+                    </div>
+                    <div class="vehicle-info">
+                        <h3>Yamaha Aerox 155</h3>
+                        <div class="vehicle-specs">
+                            <span><i class="spec-icon">🛢️</i> 155cc</span>
+                            <span><i class="spec-icon">⚙️</i> Auto</span>
+                            <span><i class="spec-icon">💼</i> 2 People</span>
+                        </div>
+                        <div class="vehicle-price">
                             <span class="price">₹499</span>/day
                         </div>
                         <a href="#" class="book-btn">Book Now</a>
                     </div>
+                </div>
+            </div>
+            <div class="show-more-container">
+                <button id="show-more-btn" class="show-more-btn">
+                    Show More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rental Growth Section -->
+    <section class="rental-growth" id="rental-growth">
+        <div class="rental-growth-container">
+            <div class="section-title">
+                <h2>Rental Growth</h2>
+                <p>Our achievements in numbers</p>
+            </div>
+            <div class="rental-growth-stats">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="5490">0</div>
+                    <div class="stat-title">Two-Wheelers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="46982">0</div>
+                    <div class="stat-title">Happy Customers</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="2500000">0</div>
+                    <div class="stat-title">KM's Driven</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="53">0</div>
+                    <div class="stat-title">Total Locations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-logo">
+                <img src="Components/Logo/final-removedbg.png" alt="Horizon Rentals Logo">
+            </div>
+            <div class="about-content">
+                <div class="section-title about-title">
+                    <h2>About Us</h2>
+                    <p>Your journey is our passion.</p>
+                </div>
+                <div class="about-text">
+                    <p>Welcome to Horizon Rentals, where we make your travel dreams come true on two wheels. Established
+                        in
+                        2020, we've grown from a small businness to one of India's most trusted two-wheeler rental
+                        service provider.
+                    </p>
+                    <p>Our mission is simple: provide high-quality, well-maintained vehicles at affordable prices,
+                        making exploration accessible to everyone. Whether you're navigating busy city streets or
+                        embarking on a cross-country adventure, our diverse fleet has the perfect rides for you.</p>
+                    <p>What sets us apart is our commitment to customer satisfaction. Our team of passionate motorcycle
+                        enthusiasts ensures every vehicle meets all safety standards, and our 24/7 roadside
+                        assistance gives you peace of mind on every journey.</p>
+                    <p>At Horizon Rentals, we don't just rent vehicles — we enable experiences. Join thousands of
+                        satisfied customers who have discovered the freedom of the open road with us.</p>
                 </div>
             </div>
         </div>
@@ -321,10 +419,10 @@
                 <div class="footer-box">
                     <h2>Company</h2>
                     <ul>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#">FAQ's</a></li>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Rental Growth</a></li>
+                        <li><a href="#rental-growth">Rental Growth</a></li>
                     </ul>
                 </div>
                 <div class="footer-box">

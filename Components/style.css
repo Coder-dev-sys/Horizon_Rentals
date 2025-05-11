@@ -44,7 +44,7 @@
 }
 
 body {
-  background-image: url(Images/urs-lendermann-Xs4_MlzINzs-unsplash.jpg);
+  background-image: url(Images/Main\ Background.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -92,23 +92,23 @@ body {
 
 @keyframes l5 {
   0% {
-    box-shadow: 20px 0 #fff, -20px 0 #fff2;
-    background: #fff
+    box-shadow: 20px 0 #ffc300, -20px 0 #fff2;
+    background: #ffc300
   }
 
   33% {
-    box-shadow: 20px 0 #fff, -20px 0 #fff2;
+    box-shadow: 20px 0 #ffc300, -20px 0 #fff2;
     background: #fff2
   }
 
   66% {
-    box-shadow: 20px 0 #fff2, -20px 0 #fff;
+    box-shadow: 20px 0 #fff2, -20px 0 #ffc300;
     background: #fff2
   }
 
   100% {
-    box-shadow: 20px 0 #fff2, -20px 0 #fff;
-    background: #fff
+    box-shadow: 20px 0 #fff2, -20px 0 #ffc300;
+    background: #ffc300
   }
 }
 
@@ -517,8 +517,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 .city-item:hover {
-  background: rgba(255, 195, 0, 0.2);
-  color: var(--accent-color);
+  color: #fff;
 }
 
 
@@ -671,16 +670,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   width: 100%;
   overflow: hidden;
   position: relative;
-}
-
-.features::after,
-.review::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50px;
-  right: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .review-container {
@@ -836,6 +825,11 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   font-family: BebasNeue-Regular, sans-serif;
 }
 
+.section-title p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .filter-container {
   display: flex;
   justify-content: space-between;
@@ -952,6 +946,154 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   background: var(--accent-color-hover);
   transform: translateY(-3px);
 }
+ 
+/* Show More Button */
+.vehicle-card:nth-child(n+5) {
+  display: none;
+}
+
+.vehicle-card.show {
+  display: block;
+}
+.show-more-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.show-more-btn {
+  background: var(--accent-color);
+  color: #000000f2;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.show-more-btn:hover {
+  background: var(--accent-color-hover);
+  transform: translateY(-3px);
+}
+
+
+
+/**    Rental Growth Section   **/
+.rental-growth {
+  background: linear-gradient(to bottom, #121212, #0a0a0a);
+  padding: 80px 50px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.features::after,
+.review::after,
+.vehicles::after,
+.rental-growth::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  right: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rental-growth-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.stat-box {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  background: rgba(20, 20, 20, 0.8);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 15px 30px rgba(255, 195, 0, 0.1);
+  border-top: 1px solid var(--accent-color-hover);
+  max-width: 250px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  font-family: BebasNeue-Regular, sans-serif;
+}
+
+.stat-title {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+/**    About Us Section   **/
+.about {
+  background: linear-gradient(to bottom, #0a0a0a, #121212);
+  padding: 80px 50px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-logo {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-logo img {
+  max-width: 300px;
+  filter: drop-shadow(0 0 10px rgba(255, 195, 0, 0.3));
+  transition: all 0.5s ease;
+}
+
+.about-logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(255, 195, 0, 0.5));
+}
+
+.about-content {
+  flex: 2 1 600px;
+}
+
+.about-title {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
 
 
 /**    Footer Section   **/

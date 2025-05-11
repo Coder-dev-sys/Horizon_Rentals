@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(data => {
       cities = data.cities;
     })
-    .catch(error => console.error('Error loading cities:', error));
+    .catch(error => console.error(error));
 
   // Filter cities based on input
   cityInput.addEventListener('input', function () {
@@ -234,10 +234,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /**  Vehicles Section  **/
+
+// Filter by category of vehicles
 document.addEventListener('DOMContentLoaded', function () {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const vehicleCards = document.querySelectorAll('.vehicle-card');
-  const searchInput = document.getElementById('vehicle-search');
 
   // Filter by category (motorcycle/scooty)
   filterBtns.forEach(btn => {
@@ -259,3 +260,97 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+// Show More Functionality
+document.addEventListener('DOMContentLoaded', function () {
+  const showMoreBtn = document.getElementById('show-more-btn');
+  const vehicleCards = document.querySelectorAll('.vehicle-card');
+
+  let isExpanded = false;
+
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', function () {
+      isExpanded = !isExpanded;
+
+      // Toggle additional vehicle cards
+      vehicleCards.forEach((card, index) => {
+        if (index >= 4) {
+          card.classList.toggle('show');
+        }
+      });
+
+      // Update button text and icon
+      if (isExpanded) {
+        showMoreBtn.innerHTML = 'Show Less';
+        showMoreBtn.classList.add('active');
+      } else {
+        showMoreBtn.innerHTML = 'Show More';
+        showMoreBtn.classList.remove('active');
+      }
+    });
+  }
+});
+
+
+
+/**  Rental Growth Section  **/
+const counterAnimation = () => {
+  const counters = document.querySelectorAll('.stat-number');
+  const speed = 200; // The lower the faster
+
+  const startCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const count = parseInt(counter.innerText);
+
+        // Calculate increment
+        let increment = target / speed;
+
+        // Adjust increment based on target value for better animation
+        if (target > 10000) {
+          increment = Math.ceil(target / 100);
+        } else if (target > 1000) {
+          increment = Math.ceil(target / 50);
+        } else {
+          increment = Math.ceil(target / 20);
+        }
+
+        // If count is less than target, continue incrementing
+        if (count < target) {
+          counter.innerText = Math.min(count + increment, target);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target.toLocaleString();
+        }
+      };
+
+      updateCount();
+    });
+  };
+
+  // Check if element is in viewport
+  const isInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+
+  // Start counter when section comes into view
+  let started = false;
+
+  window.addEventListener('scroll', () => {
+    if (!started && isInViewport(document.querySelector('.rental-growth-stats'))) {
+      started = true;
+      startCounters();
+    }
+  });
+};
+
+// Initialize counter animation after DOM is loaded
+document.addEventListener('DOMContentLoaded', counterAnimation);

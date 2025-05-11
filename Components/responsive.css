@@ -148,6 +148,41 @@ header {
   .filter-btns {
     justify-content: center;
   }
+
+  /* Rental Growth Section */
+  .rental-growth {
+    padding: 60px 20px;
+  }
+
+  .rental-growth-stats {
+    justify-content: center;
+  }
+
+  .stat-box {
+    min-width: 180px;
+  }
+
+  /* About Us Section */
+  .about {
+    padding: 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-logo {
+    margin-bottom: 30px;
+  }
+
+  .about-logo img {
+    max-width: 250px;
+  }
+
+  .about-title {
+    text-align: center;
+  }
 }
 
 /* Large Mobile */
@@ -181,14 +216,33 @@ header {
   .filter-btns {
     justify-content: center;
   }
+
+  /* Rental Growth Section */
+  .stat-box {
+    flex: 1 1 150px;
+    padding: 20px 15px;
+  }
+
+  .stat-icon {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-title {
+    font-size: 0.9rem;
+  }
+
+  /* About Us Section */
+  .about-text p {
+    font-size: 0.9rem;
+  }
 }
 
 /* Medium Mobile */
 @media (min-width: 460px) and (max-width: 659.98px) {
-  body {
-    background-attachment: scroll;
-    background-position: center top;
-  }
 
   /* Navbar Section */
   header {
@@ -231,6 +285,32 @@ header {
   .text-body {
     font-size: 0.9rem;
   }
+
+  /* About Us Section */
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about {
+    padding: 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-logo {
+    margin-bottom: 30px;
+  }
+
+  .about-logo img {
+    max-width: 250px;
+  }
+
+  .about-title {
+    text-align: center;
+  }
 }
 
 /* Small Mobile */
@@ -238,7 +318,7 @@ header {
 
   /* Navbar Section */
   header {
-    margin-left: clamp(-4.5rem -72px, -5rem + -3vw, -4rem);
+    margin-left: -4.5rem;
     width: 100%;
   }
 
@@ -269,5 +349,31 @@ header {
 
   .filter-btns {
     justify-content: center;
+  }
+
+  /* About Us Section */
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .about {
+    padding: 20px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-logo {
+    margin-bottom: 30px;
+  }
+
+  .about-logo img {
+    max-width: 250px;
+  }
+
+  .about-title {
+    text-align: center;
   }
 }
