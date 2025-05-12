@@ -1,4 +1,5 @@
 /** Page Loader  **/
+
 document.addEventListener('DOMContentLoaded', function () {
   const loader = document.querySelector('.page-loader');
 
@@ -335,3 +336,4 @@ const counterAnimation = () => {
 
 // Initialize counter animation after DOM is loaded
 document.addEventListener('DOMContentLoaded', counterAnimation);
+
