@@ -178,19 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Start auto-sliding with easing
   let intervalId = setInterval(moveCarousel, 20);
 
-  // Navigation button functionality
-  document.querySelector('.prev-btn').addEventListener('click', () => {
-    direction = 1; // Go right
-    speed = 5;
-    setTimeout(() => speed = 0.7, 500)
-  });
-
-  document.querySelector('.next-btn').addEventListener('click', () => {
-    direction = -1; // Go left
-    speed = 5;
-    setTimeout(() => speed = 0.7, 500);
-  });
-
   // Pause sliding on hover with smooth stop and start
   carousel.addEventListener('mouseenter', () => {
     clearInterval(intervalId);
@@ -199,12 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Resume sliding when mouse leaves
   carousel.addEventListener('mouseleave', () => {
     intervalId = setInterval(moveCarousel, 20);
-  });
-
-  // Adjust carousel on window resize
-  window.addEventListener('resize', function () {
-    position = 0;
-    carousel.style.transform = `translateX(0)`;
   });
 
   // Add parallax effect to cards

@@ -120,10 +120,6 @@ header {
     padding: 30px 0 15px 0;
   }
 
-  .features-carousel-container {
-    padding: 0 30px;
-  }
-
   .card {
     min-width: 170px;
     padding: 1.5rem;
@@ -269,10 +265,6 @@ header {
   }
 
   /* Features Section */
-  .features-carousel-container {
-    padding: 0 15px;
-  }
-
   .card {
     min-width: 150px;
     padding: 1.2rem;

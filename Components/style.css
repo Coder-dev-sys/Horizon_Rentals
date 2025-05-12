@@ -532,14 +532,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   box-shadow: 0px 35px 35px 60px #121212;
 }
 
-.features-carousel-container {
-  width: 100%;
-  overflow: hidden;
-  padding: 0 50px;
-  position: relative;
-  margin-top: 20px;
-}
-
 .features-content {
   display: flex;
   gap: 30px;
@@ -577,7 +569,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 .card:hover {
   border-color: var(--accent-color-hover);
   box-shadow: 0 15px 30px rgba(255, 195, 0, 0.2);
-  transform: translateY(-15px) scale(1.05);
+  transform: translateY(-8px) scale(1.05);
 }
 
 .features-title {
@@ -620,39 +612,6 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 
 .card:hover .text-body {
   color: rgba(255, 255, 255, 0.9);
-}
-
-.features-nav {
-  position: absolute;
-  width: 100%;
-  top: 35%;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5px;
-  z-index: 10;
-}
-
-.nav-btn {
-  background-color: rgba(228, 214, 161, 0.2);
-  color: var(--accent-color);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  opacity: 0.7;
-}
-
-.nav-btn:hover {
-  background-color: var(--accent-color-hover);
-  color: #000;
-  opacity: 1;
 }
 
 .feature-icon {
@@ -1244,6 +1203,10 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 14px;
+}
+
+.footer-bottom span{
+  color: var(--accent-color-hover);
 }
 
 
