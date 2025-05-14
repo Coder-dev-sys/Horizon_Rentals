@@ -1006,7 +1006,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 /**    About Us Section   **/
 .about {
   background: linear-gradient(to bottom, #0a0a0a, #121212);
-  padding: 80px 50px;
+  padding: 65px 50px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -1045,6 +1045,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 .about-title {
   text-align: left;
   margin-bottom: 30px;
+  margin-top: 40px;
 }
 
 .about-text p {
@@ -1327,4 +1328,180 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
+}
+
+
+
+
+/**   CONTACT_FAQ PAGE   **/
+
+/**    Contact Us Section   **/
+.nz-contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.95);
+  opacity: 80%;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+  border-radius: 10px;
+}
+
+.nz-contact-card {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 80%;
+}
+
+.nz-contact-form-container {
+  flex: 1 1 620px;
+}
+
+.nz-contact-title {
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  font-family: BebasNeue-Regular, sans-serif;
+}
+
+.nz-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nz-form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.nz-form-group {
+  flex: 1 1 180px;
+}
+
+.nz-form-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.nz-form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.nz-form-control:focus {
+  outline: none;
+  border-color: #ffc300;
+  box-shadow: 0 0 0 2px rgba(255, 195, 0, 0.2);
+}
+
+.nz-textarea-group {
+  width: 100%;
+}
+
+textarea.nz-form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.nz-submit-btn {
+  background-color: #ffc300;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.nz-submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 15px rgba(255, 195, 0, 0.3);
+}
+
+
+
+/**    FAQ Section   **/
+.nz-faq {
+  padding: 80px 20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  opacity: 80%;
+}
+
+.nz-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.nz-faq-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  font-family: BebasNeue-Regular, sans-serif;
+}
+
+.nz-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nz-faq-item {
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nz-faq-question {
+  padding: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #ffffff;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+.nz-faq-question::-webkit-details-marker {
+  display: none;
+}
+
+.nz-faq-question::after {
+  content: '+';
+  float: right;
+  font-size: 1.5rem;
+  color: #ffc300;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+details[open] .nz-faq-question::after {
+  transform: rotate(45deg);
+}
+
+.nz-faq-answer {
+  padding: 0 20px 20px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
 }

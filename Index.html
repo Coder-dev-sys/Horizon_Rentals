@@ -34,8 +34,17 @@
             <li><a href="#">Home</a></li>
             <li><a href="#vehicles">Vehicles</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#review">Reviews</a></li>
+            <li><a href="/includes/contact_faq.html#faq">FAQ's</a></li>
         </ul>
+
+        <!-- <?php
+  session_start();
+  if (isset($_SESSION['user_id'])) {
+    echo '<a href="dashboard.php">My Account</a>';
+  } else {
+    echo '<a href="login.php">Sign In</a>';
+  }
+?> -->
         <a href="includes/sign-in-page.html" class="header-btn">
             <button class="sign-in-btn">Sign In</button>
         </a>
@@ -341,6 +350,10 @@
                 <button id="show-more-btn" class="show-more-btn">
                     Show More
                 </button>
+                <a href="includes/vehicles.html">
+                    Show More
+                    </button>
+                    </a>
             </div>
         </div>
     </section>
@@ -393,14 +406,15 @@
                     <p>Our mission is simple: provide high-quality, well-maintained vehicles at affordable prices,
                         making exploration accessible to everyone. Whether you're navigating busy city streets or
                         embarking on a cross-country adventure, our diverse fleet has the perfect rides for you.</p>
-                    <p>What sets us apart is our commitment to customer satisfaction. Our team of passionate motorcycle
-                        enthusiasts ensures every vehicle meets all safety standards, and our 24/7 roadside
-                        assistance gives you peace of mind on every journey.</p>
-                    <p>At Horizon Rentals, we don't just rent vehicles — we enable experiences. Join thousands of
-                        satisfied customers who have discovered the freedom of the open road with us.</p>
+                </div>
+                <div class="show-more-container">
+                    <a href="includes/about.html">
+                        <button id="show-more-btn" class="show-more-btn">
+                            Read More
+                        </button>
+                    </a>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Footer Section -->
@@ -414,8 +428,8 @@
                     <h2>Company</h2>
                     <ul>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="/includes/contact_faq.html#faq">FAQ's</a></li>
+                        <li><a href="/includes/contact_faq.html">Contact Us</a></li>
                         <li><a href="#rental-growth">Rental Growth</a></li>
                     </ul>
                 </div>
