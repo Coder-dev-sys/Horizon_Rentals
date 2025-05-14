@@ -2,12 +2,12 @@
 
 /**    General    **/
 @font-face {
-  src: url(/assets/Fonts/Quicksand/Quicksand-Medium.ttf);
+  src: url(/demo-web-1/assets/Fonts/Quicksand/Quicksand-Medium.ttf);
   font-family: Quicksand-Medium;
 }
 
 @font-face {
-  src: url(/assets/Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+  src: url(/demo-web-1/assets/Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
   font-family: BebasNeue-Regular;
 }
 
@@ -44,7 +44,7 @@
 }
 
 body {
-  background-image: url(/assets/Images/Main\ Background.jpg);
+  background-image: url(/demo-web-1/assets/Images/MainBackground.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;

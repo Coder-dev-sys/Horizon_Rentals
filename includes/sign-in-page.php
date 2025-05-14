@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/assets/Logo/Bike.png" />
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="icon" type="image/png" href="/demo-web-1/assets/Logo/Bike.png" />
+    <link rel="stylesheet" href="/demo-web-1/assets/css/style.css" />
+    <link rel="stylesheet" href="/demo-web-1/assets/css/responsive.css" />
     <title>Horizon Rentals</title>
     <style>
         body {
@@ -103,14 +103,14 @@
     <!-- Page Loader -->
     <div class="page-loader">
         <div class="loader-content">
-            <img src="/assets/Logo/Bike.png" alt="Horizon Rentals" class="loader-logo">
+            <img src="/demo-web-1/assets/Logo/Bike.png" alt="Horizon Rentals" class="loader-logo">
             <div class="dots"></div>
         </div>
     </div>
 
     <!-- Navbar Section -->
     <header>
-        <a href="#" class="header-logo"><img src="/assets/Logo/final-removedbg.png" alt="Horizon Rentals logo" /></a>
+        <a href="#" class="header-logo"><img src="/demo-web-1/assets/Logo/final-removedbg.png" alt="Horizon Rentals logo" /></a>
         <div id="menu-icon">
             <label class="bar" for="check">
                 <input type="checkbox" id="check" />
@@ -120,10 +120,10 @@
             </label>
         </div>
         <ul class="navbar">
-            <li><a href="/Index.html">Home</a></li>
-            <li><a href="/Index.html#vehicles">Vehicles</a></li>
-            <li><a href="/Index.html#about">About Us</a></li>
-            <li><a href="/includes/contact_faq.html#faq">FAQ's</a></li>
+            <li><a href="/demo-web-1/#">Home</a></li>
+            <li><a href="/demo-web-1/#vehicles">Vehicles</a></li>
+            <li><a href="/demo-web-1/#about">About Us</a></li>
+            <li><a href="/demo-web-1/includes/contact_faq.php#faq">FAQ's</a></li>
         </ul>
     </header>
 
@@ -162,7 +162,7 @@
             </div>
         </div>
     </div>
-    <script src="/assets/js/script.js"></script>
+    <script src="/demo-web-1/assets/js/script.js"></script>
     <script>
         const signUpButton = document.getElementById('signUp');
         const signInButton = document.getElementById('signIn');

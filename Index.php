@@ -34,18 +34,9 @@
             <li><a href="#">Home</a></li>
             <li><a href="#vehicles">Vehicles</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="/includes/contact_faq.html#faq">FAQ's</a></li>
+            <li><a href="includes/contact_faq.php#faq">FAQ's</a></li>
         </ul>
-
-        <!-- <?php
-  session_start();
-  if (isset($_SESSION['user_id'])) {
-    echo '<a href="dashboard.php">My Account</a>';
-  } else {
-    echo '<a href="login.php">Sign In</a>';
-  }
-?> -->
-        <a href="includes/sign-in-page.html" class="header-btn">
+        <a href="includes/sign-in-page.php" class="header-btn">
             <button class="sign-in-btn">Sign In</button>
         </a>
     </header>
@@ -350,7 +341,7 @@
                 <button id="show-more-btn" class="show-more-btn">
                     Show More
                 </button>
-                <a href="includes/vehicles.html">
+                <a href="includes/vehicles.php">
                     Show More
                     </button>
                     </a>
@@ -408,7 +399,7 @@
                         embarking on a cross-country adventure, our diverse fleet has the perfect rides for you.</p>
                 </div>
                 <div class="show-more-container">
-                    <a href="includes/about.html">
+                    <a href="includes/about.php">
                         <button id="show-more-btn" class="show-more-btn">
                             Read More
                         </button>
@@ -428,8 +419,8 @@
                     <h2>Company</h2>
                     <ul>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="/includes/contact_faq.html#faq">FAQ's</a></li>
-                        <li><a href="/includes/contact_faq.html">Contact Us</a></li>
+                        <li><a href="includes/contact_faq.php#faq">FAQ's</a></li>
+                        <li><a href="includes/contact_faq.php">Contact Us</a></li>
                         <li><a href="#rental-growth">Rental Growth</a></li>
                     </ul>
                 </div>
