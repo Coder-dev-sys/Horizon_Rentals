@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
   cityInput.parentNode.appendChild(autocompleteContainer);
 
   // Fetch cities from JSON file
-  fetch('/includes/cities.json')
+  fetch('/demo-web-1/includes/cities.json')   
     .then(response => response.json())
     .then(data => {
       cities = data.cities;

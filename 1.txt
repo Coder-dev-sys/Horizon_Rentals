@@ -1,8 +1,0 @@
-<?php
-  session_start();
-  if (isset($_SESSION['user_id'])) {
-    echo '<a href="dashboard.php">My Account</a>';
-  } else {
-    echo '<a href="login.php">Sign In</a>';
-  }
-?>
