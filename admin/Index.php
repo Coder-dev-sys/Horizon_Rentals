@@ -9,7 +9,7 @@ if (isset($_POST['login'])) {
     $rows = mysqli_affected_rows($con);
     if ($rows > 0) {
         $_SESSION['alogin'] = $username;
-        echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+        echo "<script type='text/javascript'> document.location = 'includes/dashboard.php'; </script>";
     } else {
         echo "<script>alert('Invalid Details');</script>";
     }
@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/demo-web-1/assets/Logo/Bike.png" />
+    <link rel="icon" type="image/png" href="/Horizon_Rentals/assets/Logo/Bike.png" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Horizon Rentals | Admin Panel</title>
 </head>

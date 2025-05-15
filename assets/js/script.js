@@ -65,15 +65,6 @@ document.getElementById('pickup-date').addEventListener('change', function () {
 });
 
 
-// clickable Search icon
-const searchForm = document.querySelector('.search-form');
-const searchIcon = document.querySelector('.search-icon');
-
-searchIcon.addEventListener('click', () => {
-  searchForm.submit();
-});
-
-
 // City Autocomplete
 document.addEventListener('DOMContentLoaded', function () {
   const cityInput = document.getElementById('city');
@@ -85,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
   cityInput.parentNode.appendChild(autocompleteContainer);
 
   // Fetch cities from JSON file
-  fetch('/demo-web-1/includes/cities.json')   
+  fetch('/Horizon_Rentals/includes/cities.json')
     .then(response => response.json())
     .then(data => {
       cities = data.cities;
@@ -242,7 +233,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
 
 // Show More Functionality
 document.addEventListener('DOMContentLoaded', function () {

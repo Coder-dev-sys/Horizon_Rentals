@@ -1,3 +1,30 @@
+<?php
+session_start();
+
+// Database Connection
+$con = mysqli_connect("localhost", "root", "", "horizonrental");
+if ($con === false) {
+?>
+    <script>
+        alert("<?php echo "ERROR: Could not connect. " . mysqli_connect_error(); ?>");
+    </script>
+<?php
+}
+
+// Fetching data of vehicles from database
+$qry = "SELECT id, vehicleName, vehicleCC, vehicleType, pricePerDay, vehicleImg FROM tblvehicles";
+$run = mysqli_query($con, $qry);
+$vehicles = [];
+if (mysqli_num_rows($run) > 0) {
+    while ($row = mysqli_fetch_assoc($run)) {
+        $vehicles[] = $row;
+    }
+} else {
+    echo "<script>alert('No Vehicles Found');</script>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,10 +92,10 @@
                     <span>Drop Off Date</span>
                     <input type="date" name="dropoff-date" id="dropoff-date" />
                 </div>
-                <div class="search-icon">
+                <a href="#vehicles"><div class="search-icon">
                     <div class="search_circle"></div>
                     <div class="search_rectangle"></div>
-                </div>
+                </div></a>
             </form>
         </div>
     </section>
@@ -200,142 +227,29 @@
                 </div>
             </div>
             <div class="vehicles-grid">
-                <div class="vehicle-card" data-category="motorcycle">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/Royal Enifield Classic 350.jpg" alt="Royal Enfield Classic 350">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>Royal Enfield Classic 350</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 350cc</span>
-                            <span><i class="spec-icon">⚙️</i> Manual</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹899</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="motorcycle">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/Bajaj Pulsar NS200.jpg" alt="Bajaj Pulsar NS200">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>Bajaj Pulsar NS200</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 200cc</span>
-                            <span><i class="spec-icon">⚙️</i> Manual</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹699</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="scooty">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/Honda Activa 6g.jpg" alt="Honda Activa 6G">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>Honda Activa 6G</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 110cc</span>
-                            <span><i class="spec-icon">⚙️</i> Auto</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹399</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="scooty">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/TVS Jupiter.jpg" alt="TVS Jupiter">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>TVS Jupiter</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 110cc</span>
-                            <span><i class="spec-icon">⚙️</i> Auto</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹449</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="motorcycle">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/KTM Duke 200.jpg" alt="KTM Duke 200">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>KTM Duke 200</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 200cc</span>
-                            <span><i class="spec-icon">⚙️</i> Manual</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹799</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="scooty">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/Suzuki Access 125.jpg" alt="Suzuki Access 125">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>Suzuki Access 125</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 125cc</span>
-                            <span><i class="spec-icon">⚙️</i> Auto</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹399</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="motorcycle">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/Yamaha R15.jpg" alt="Yamaha R15">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>Yamaha R15</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 155cc</span>
-                            <span><i class="spec-icon">⚙️</i> Manual</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹699</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="vehicle-card" data-category="scooty">
-                    <div class="vehicle-img">
-                        <img src="assets/Images/Yamaha Aerox 155.jpg" alt="Yamaha Aerox 155">
-                    </div>
-                    <div class="vehicle-info">
-                        <h3>Yamaha Aerox 155</h3>
-                        <div class="vehicle-specs">
-                            <span><i class="spec-icon">🛢️</i> 155cc</span>
-                            <span><i class="spec-icon">⚙️</i> Auto</span>
-                            <span><i class="spec-icon">💼</i> 2 People</span>
-                        </div>
-                        <div class="vehicle-price">
-                            <span class="price">₹499</span>/day
-                        </div>
-                        <a href="#" class="book-btn">Book Now</a>
-                    </div>
-                </div>
+                <?php
+                foreach ($vehicles as $vehicle) {
+                    $dataCategory = ($vehicle['vehicleType'] == 'Auto') ? 'scooty' : 'motorcycle';
+                    echo " <div class='vehicle-card' data-category={$dataCategory}>
+                                <div class='vehicle-img'>
+                                    <img src='admin/includes/images/" . $vehicle['vehicleImg'] . "' alt='Vehicle Image'>
+                                </div>
+                                <div class='vehicle-info'>
+                                    <h3>{$vehicle['vehicleName']}</h3>
+                                    <div class='vehicle-specs'>
+                                        <span><i class='spec-icon'>🛢️</i> {$vehicle['vehicleCC']} cc</span>
+                                        <span><i class='spec-icon'>⚙️</i> {$vehicle['vehicleType']} </span>
+                                        <span><i class='spec-icon'>💼</i> {$vehicle['vehicleCC']} People</span>
+                                    </div>
+                                    <div class='vehicle-price'>
+                                        <span class='price'>₹ {$vehicle['pricePerDay']}</span>/day
+                                    </div>
+                                    <a href='includes/booking-page.php' class='book-btn'>Book Now</a>
+                                </div>
+                            </div>
+                    ";
+                }
+                ?>
             </div>
             <div class="show-more-container">
                 <button id="show-more-btn" class="show-more-btn">

@@ -2,12 +2,12 @@
 
 /**    General    **/
 @font-face {
-  src: url(/demo-web-1/assets/Fonts/Quicksand/Quicksand-Medium.ttf);
+  src: url(/Horizon_Rentals/assets/Fonts/Quicksand/Quicksand-Medium.ttf);
   font-family: Quicksand-Medium;
 }
 
 @font-face {
-  src: url(/demo-web-1/assets/Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
+  src: url(/Horizon_Rentals/assets/Fonts/Bebas_Neue/BebasNeue-Regular.ttf);
   font-family: BebasNeue-Regular;
 }
 
@@ -44,7 +44,7 @@
 }
 
 body {
-  background-image: url(/demo-web-1/assets/Images/MainBackground.jpg);
+  background-image: url(/Horizon_Rentals/assets/Images/MainBackground.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
