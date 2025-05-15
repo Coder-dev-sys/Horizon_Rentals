@@ -12,7 +12,7 @@ if ($con === false) {
 }
 
 // Fetching data of vehicles from database
-$qry = "SELECT id, vehicleName, vehicleCC, vehicleType, pricePerDay, vehicleImg FROM tblvehicles";
+$qry = "SELECT id, vehicleName, vehicleCC, seatingCapacity, vehicleType, pricePerDay, vehicleImg FROM tblvehicles";
 $run = mysqli_query($con, $qry);
 $vehicles = [];
 if (mysqli_num_rows($run) > 0) {
@@ -239,7 +239,7 @@ if (mysqli_num_rows($run) > 0) {
                                     <div class='vehicle-specs'>
                                         <span><i class='spec-icon'>🛢️</i> {$vehicle['vehicleCC']} cc</span>
                                         <span><i class='spec-icon'>⚙️</i> {$vehicle['vehicleType']} </span>
-                                        <span><i class='spec-icon'>💼</i> {$vehicle['vehicleCC']} People</span>
+                                        <span><i class='spec-icon'>💼</i> {$vehicle['seatingCapacity']} People</span>
                                     </div>
                                     <div class='vehicle-price'>
                                         <span class='price'>₹ {$vehicle['pricePerDay']}</span>/day
