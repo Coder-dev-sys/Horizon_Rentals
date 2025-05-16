@@ -353,9 +353,6 @@ body {
     font-weight: 500;
     margin-right: 5px;
     text-decoration: none;
-}
-
-.delete-btn {
     background-color: #e74c3c;
     color: white;
 }

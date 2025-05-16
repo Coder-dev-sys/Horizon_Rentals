@@ -53,6 +53,7 @@ if (isset($_GET['delete_id'])) {
         echo "<script>alert('Vehicle not found!'); window.location.href = 'manage_vehicle.php';</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -119,6 +120,7 @@ if (isset($_GET['delete_id'])) {
                                 <td>{$vehicle['vehicleType']}</td>
                                 <td>{$vehicle['pricePerDay']}</td>
                                 <td>
+                                    <a href='edit_vehicle.php?edit_id={$vehicle['id']}' class='edit-button'>Edit</a>
                                     <a href='?delete_id={$vehicle['id']}' class='delete-btn'>Delete</a>   
                                 </td>
                             </tr>
@@ -126,6 +128,23 @@ if (isset($_GET['delete_id'])) {
                         }
                         ?>
                     </tbody>
+                    <style>
+                        .edit-button {
+                            padding: 6px 12px;
+                            border: none;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            font-weight: 500;
+                            margin-right: 5px;
+                            text-decoration: none;
+                            background-color: #3498db;
+                            color: white;
+                        }
+
+                        .edit-button:hover {
+                            background-color: #2980b9;
+                        }
+                    </style>
                 </table>
             </div>
         </div>

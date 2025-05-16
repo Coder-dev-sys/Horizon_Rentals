@@ -26,6 +26,7 @@ if (isset($_GET['delete_id'])) {
         echo "<script>alert('Error deleting booking from database: " . mysqli_error($con) . "');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

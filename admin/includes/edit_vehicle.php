@@ -2,22 +2,33 @@
 session_start();
 include('config.php');
 
-if (isset($_POST['submit'])) {
+// Fetching vehicle data for editing
+$vehicle = [];
+if (isset($_GET['edit_id'])) {
+    $edit_id = $_GET['edit_id'];
+    $qry = "SELECT id, vehicleName, seatingCapacity, pricePerDay, vehicleCC, vehicleType FROM tblvehicles WHERE id = '$edit_id'";
+    $run = mysqli_query($con, $qry);
+    if (mysqli_num_rows($run) > 0) {
+        $vehicle = mysqli_fetch_assoc($run);
+    } else {
+        echo "<script>alert('No Vehicle Found'); window.location.href='manage_vehicle.php';</script>";
+    }
+}
+
+// Updating the Database
+if (isset($_POST['update_vehicle'])) {
+    $edit_id = $_POST['edit_id'];
     $vehicle_name = $_POST['vehicle-name'];
     $seating_capacity = $_POST['seating'];
     $price_per_day = $_POST['price'];
     $vehicle_cc = $_POST['cc'];
     $vehicle_type = $_POST['vehicle-type'];
-    $vehicle_img = $_FILES['vehicle-image']['name'];
-    $query = "insert into tblvehicles(vehicleName,seatingCapacity,pricePerDay,vehicleCC,vehicleType,vehicleImg) values('$vehicle_name','$seating_capacity','$price_per_day','$vehicle_cc','$vehicle_type','$vehicle_img')";
-    $file_name = $_FILES['vehicle-image']['name'];
-    $folder = "images/" . $file_name;
-    move_uploaded_file($_FILES['vehicle-image']['tmp_name'], $folder);
-    $run = mysqli_query($con, $query) or die("Can't insert data into database" . mysqli_error($con));
-    if ($run) {
-        echo "<script>alert('Vehicle Added Successfully');</script>";
+    $update_query = "update tblvehicles set vehicleName = '$vehicle_name',seatingCapacity = '$seating_capacity',pricePerDay = '$price_per_day',vehicleCC = '$vehicle_cc',vehicleType = '$vehicle_type' where id = '$edit_id'";
+    $update_run = mysqli_query($con, $update_query) or die("Can't update data: " . mysqli_error($con));
+    if ($update_run) {
+        echo "<script>alert('Vehicle Updated Successfully'); window.location.href='manage_vehicle.php';</script>";
     } else {
-        echo "<script>alert('Vehicle Not Added');</script>";
+        echo "<script>alert('Vehicle Not Updated');</script>";
     }
 }
 
@@ -62,29 +73,30 @@ if (isset($_POST['submit'])) {
 
         <!-- Main Content Area -->
         <div class="main-content">
-            <h2 style="margin: 20px">Add Vehicle</h2>
+            <h2 style="margin: 20px">Edit Vehicle</h2>
 
-            <form class="add-vehicle-form" method="post" action="add_vehicle.php" enctype="multipart/form-data">
+            <form class="add-vehicle-form" method="post" action="edit_vehicle.php" enctype="multipart/form-data">
+                <input type="hidden" name="edit_id" value="<?php echo isset($vehicle['id']) ? $vehicle['id'] : ''; ?>">
                 <div class="form-section">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="vehicle-name">Vehicle Name</label>
-                            <input type="text" id="vehicle-name" name="vehicle-name" required>
+                            <input type="text" id="vehicle-name" name="vehicle-name" value="<?php echo isset($vehicle['vehicleName']) ? $vehicle['vehicleName'] : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="seating">Seating Capacity*</label>
-                            <input type="number" id="seating" name="seating" min="1" max="3" required>
+                            <input type="number" id="seating" name="seating" min="1" value="<?php echo isset($vehicle['seatingCapacity']) ? $vehicle['seatingCapacity'] : ''; ?>" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="price">Price Per Day (In RS)*</label>
-                            <input type="text" id="price" name="price" patttern="[0-9]" required>
+                            <input type="text" id="price" name="price" pattern="[0-9]+" value="<?php echo isset($vehicle['pricePerDay']) ? $vehicle['pricePerDay'] : ''; ?>" required>
                         </div>
                         <div class="form-group">
                             <label for="cc">Vehicle's CC*</label>
-                            <input type="text" id="cc" name="cc" patttern="[0-9]" required>
+                            <input type="text" id="cc" name="cc" pattern="[0-9]+" value="<?php echo isset($vehicle['vehicleCC']) ? $vehicle['vehicleCC'] : ''; ?>" required>
                         </div>
                     </div>
 
@@ -92,8 +104,8 @@ if (isset($_POST['submit'])) {
                         <div class="form-group">
                             <label for="vehicle-type">Vehicle Type</label>
                             <select id="vehicle-type" name="vehicle-type" required>
-                                <option value="Auto">Auto</option>
-                                <option value="Manual">Manual</option>
+                                <option value="Auto" <?php echo (isset($vehicle['vehicleType']) && $vehicle['vehicleType'] == 'Auto') ? 'selected' : ''; ?>>Auto</option>
+                                <option value="Manual" <?php echo (isset($vehicle['vehicleType']) && $vehicle['vehicleType'] == 'Manual') ? 'selected' : ''; ?>>Manual</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -112,7 +124,7 @@ if (isset($_POST['submit'])) {
 
                 <div class="form-actions">
                     <button type="reset" class="btn btn-cancel">Cancel</button>
-                    <button type="submit" class="btn btn-submit" name="submit">Save Changes</button>
+                    <button type="submit" class="btn btn-submit" name="update_vehicle">Save Changes</button>
                 </div>
             </form>
         </div>

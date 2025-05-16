@@ -28,6 +28,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Query Upload Unsuccessful');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

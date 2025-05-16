@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('includes/config.php');
+
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
@@ -14,6 +15,7 @@ if (isset($_POST['login'])) {
         echo "<script>alert('Invalid Details');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

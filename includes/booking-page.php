@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
         echo "<script>alert('Booking Unsuccessful');</script>";
     }
 }
+
 ?>
 
 <!DOCTYPE html>

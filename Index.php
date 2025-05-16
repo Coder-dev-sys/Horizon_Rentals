@@ -92,10 +92,12 @@ if (mysqli_num_rows($run) > 0) {
                     <span>Drop Off Date</span>
                     <input type="date" name="dropoff-date" id="dropoff-date" />
                 </div>
-                <a href="#vehicles"><div class="search-icon">
-                    <div class="search_circle"></div>
-                    <div class="search_rectangle"></div>
-                </div></a>
+                <a href="#vehicles">
+                    <div class="search-icon">
+                        <div class="search_circle"></div>
+                        <div class="search_rectangle"></div>
+                    </div>
+                </a>
             </form>
         </div>
     </section>
