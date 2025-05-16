@@ -1,4 +1,3 @@
-
 # 🏍️ Horizon Rentals
 
 **Horizon Rentals** is a fully responsive and animated web-based Motorcycle/Scooty rental management system. Built using HTML, CSS, JavaScript, PHP, and MySQL, it features complete CRUD functionality for managing vehicles, bookings, and user queries. Designed as a learning project and potentially for academic submission, it offers dynamic content management and an intuitive admin panel—all with a premium visual layout.
@@ -26,8 +25,7 @@
 Example placeholder:
 
 ```
-📷 /screenshots/homepage-full.png  
-📷 /screenshots/booking-form-highlight.png
+📷 ![localhost_Horizon_Rentals_ (2)](https://github.com/user-attachments/assets/d48a636f-a581-4b08-9fa1-51895f55f212)
 ```
 
 ---
