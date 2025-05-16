@@ -20,13 +20,7 @@
 
 ## 📸 Visuals
 
-> 💡 Recommendation: Include both a full-page homepage screenshot and a zoomed-in view of the booking form or animated component
-
-Example placeholder:
-
-```
-📷 ![localhost_Horizon_Rentals_ (2)](https://github.com/user-attachments/assets/d48a636f-a581-4b08-9fa1-51895f55f212)
-```
+![Screenshot 2025-05-16 152502](https://github.com/user-attachments/assets/869cb0d5-caef-4f71-8360-80a6952e93fb)
 
 ---
 
@@ -73,26 +67,38 @@ Example placeholder:
 
 ---
 
-## 📁 Folder Structure (Coming Soon)
+## 📁 Folder Structure 
 
-Once GitHub repo is provided, a structured folder tree will be added here.
 
----
-
-## 📜 License
-
-This project is protected under the **Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)** license.
-
-- You may **view and share** the project
-- You **may not reuse, modify, or resubmit** it without permission
-
-🔗 [Learn more about this license](https://creativecommons.org/licenses/by-nd/4.0/)
+```plaintext
+Horizon_Rentals
+├── assets/              # Static files
+│   ├── css/
+│   ├── js/
+│   ├── Fonts/
+│   ├── Logo/
+│   └── images/
+├── includes/            # Common PHP
+│   ├── about.php
+│   ├── booking-page.php
+│   ├── contact_faq.php
+│   ├── cities.json
+│   └── sign-in-page.php
+├── admin/               # Admin-only dashboard and management tools
+│   ├── assets/
+│   └──  includes/
+├── sqlFile/                 # Database schema
+│   └── horizonrental.sql
+├── README.md
+├── Index.php
+└── LICENSE.md
+```
 
 ---
 
 ## 🙌 Acknowledgments
 
-- Project by coder-dev-sys
+- Project by **coder-dev-sys**
 - Slight assistance via AI-coding tools
 
 ---
