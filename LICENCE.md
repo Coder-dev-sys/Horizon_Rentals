@@ -1,4 +1,4 @@
-Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
+📜 **Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)**
 
 By accessing or using this project (Horizon Rentals), you agree to the following terms:
 
